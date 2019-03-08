@@ -33,6 +33,7 @@ project "OnEngine"
     }
 
     includedirs {
+        "%{prj.name}/src",
         "%{prj.name}/Deps/spdlog/include"
     }
 

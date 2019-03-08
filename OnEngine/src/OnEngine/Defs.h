@@ -16,3 +16,5 @@
 #endif // ON_WINDOW
 #endif // ON_ENGINE
 
+#define BIT(x) (1 << x)
+
