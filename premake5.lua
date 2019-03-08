@@ -26,6 +26,8 @@ project "OnEngine"
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("bint/" .. outputdir .. "/%{prj.name}")
 
+    pchheader "OnPCH.h"
+    pchsource "OnEngine/src/OnPCH.cpp"
 
     files {
         "%{prj.name}/src/**.h",

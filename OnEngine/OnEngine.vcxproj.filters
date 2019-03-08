@@ -19,6 +19,9 @@
     <ClInclude Include="src\OnEngine\EntryPoint.h">
       <Filter>OnEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\OnEngine\Events\ApplicationEvent.h">
+      <Filter>OnEngine\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\OnEngine\Events\Event.h">
       <Filter>OnEngine\Events</Filter>
     </ClInclude>
@@ -31,9 +34,7 @@
     <ClInclude Include="src\OnEngine\Log.h">
       <Filter>OnEngine</Filter>
     </ClInclude>
-    <ClInclude Include="src\OnEngine\Events\ApplicationEvent.h">
-      <Filter>OnEngine\Events</Filter>
-    </ClInclude>
+    <ClInclude Include="src\OnPCH.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\OnEngine\Application.cpp">
@@ -42,5 +43,6 @@
     <ClCompile Include="src\OnEngine\Log.cpp">
       <Filter>OnEngine</Filter>
     </ClCompile>
+    <ClCompile Include="src\OnPCH.cpp" />
   </ItemGroup>
 </Project>
