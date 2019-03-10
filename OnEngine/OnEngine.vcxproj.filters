@@ -35,6 +35,10 @@
       <Filter>OnEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\OnPCH.h" />
+    <ClInclude Include="src\OnEngine\Window.h" />
+    <ClInclude Include="src\Platform\WinWindow.h" />
+    <ClInclude Include="src\Platform\MacWindow.h" />
+    <ClInclude Include="src\Platform\LinWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\OnEngine\Application.cpp">
@@ -44,5 +48,8 @@
       <Filter>OnEngine</Filter>
     </ClCompile>
     <ClCompile Include="src\OnPCH.cpp" />
+    <ClCompile Include="src\Platform\WinWindow.cpp" />
+    <ClCompile Include="src\Platform\MacWindow.cpp" />
+    <ClCompile Include="src\Platform\LinWindow.cpp" />
   </ItemGroup>
 </Project>

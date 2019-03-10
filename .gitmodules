@@ -1,3 +1,6 @@
 [submodule "OnEngine/Deps/spdlog"]
 	path = OnEngine/Deps/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "OnEngine/Deps/GLFW"]
+	path = OnEngine/Deps/GLFW
+	url = https://github.com/glfw/glfw

@@ -18,6 +18,12 @@ configurations {   -- Dropdown Solution Configurations
 
 outputdir = "%{cfg.buildcfg}_%{cfg.system}_%{cfg.architecture}"
 
+-- Include directories relative to root folder (solution directory)
+IncludeDir = {}
+IncludeDir["GLFW"] = "OnEngine/Deps/GLFW/include"
+
+include "OnEngine/Deps/GLFW"
+
 project "OnEngine" 
     location "OnEngine"
     kind "SharedLib"
@@ -36,13 +42,20 @@ project "OnEngine"
 
     includedirs {
         "%{prj.name}/src",
-        "%{prj.name}/Deps/spdlog/include"
+        "%{prj.name}/Deps/spdlog/include",
+        "%{IncludeDir.GLFW}"
     }
+
+    links 
+	{ 
+		"GLFW",
+		"opengl32.lib"
+	}
 
     filter"system:windows"
         cppdialect "C++17"
         staticruntime "On"
-        systemversion "10.0.17763.0"
+        systemversion "latest"
 
         defines {
              "ON_ENGINE",
@@ -103,7 +116,7 @@ project "App"
     filter"system:windows"
         cppdialect "C++17"
         staticruntime "On"
-        systemversion "10.0.17763.0"
+        systemversion "latest"
 
         defines {
              "ON_ENGINE",
