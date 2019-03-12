@@ -1,6 +1,8 @@
 #pragma once
 #include "Defs.h"
+#include "Events\ApplicationEvent.h"
 #include "Events\Event.h"
+
 #include "Window.h"
 
 namespace on
@@ -17,6 +19,11 @@ namespace on
         virtual ~Application();
 
         void Run();
+
+        void OnEvent(Event& event);
+
+    private:
+        bool OnWindowClosed(WindowCloseEvent& event);
     };
      
     /*To Be defining in the client*/
