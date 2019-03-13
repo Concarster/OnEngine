@@ -4,6 +4,9 @@
 /*To be USED for APP*/
 #include "OnEngine/Application.h"
 
+/*Layers*/
+#include "OnEngine\Layers\Layer.h"
+
 /*Logger System*/
 #include "OnEngine/Log.h"
 

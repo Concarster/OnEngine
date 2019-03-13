@@ -7,6 +7,12 @@
     <Filter Include="OnEngine\Events">
       <UniqueIdentifier>{5C2E823E-C8B9-EF02-D1CA-72F73DD54B03}</UniqueIdentifier>
     </Filter>
+    <Filter Include="OnEngine\Layers">
+      <UniqueIdentifier>{3719654D-A3A4-D211-ACB5-550618C02E12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\OnEngine.h" />
@@ -31,25 +37,51 @@
     <ClInclude Include="src\OnEngine\Events\MouseEvent.h">
       <Filter>OnEngine\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\OnEngine\Layers\Layer.h">
+      <Filter>OnEngine\Layers</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OnEngine\Layers\LayerSatck.h">
+      <Filter>OnEngine\Layers</Filter>
+    </ClInclude>
     <ClInclude Include="src\OnEngine\Log.h">
       <Filter>OnEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\OnEngine\Window.h">
+      <Filter>OnEngine</Filter>
+    </ClInclude>
     <ClInclude Include="src\OnPCH.h" />
-    <ClInclude Include="src\OnEngine\Window.h" />
-    <ClInclude Include="src\Platform\WinWindow.h" />
-    <ClInclude Include="src\Platform\MacWindow.h" />
-    <ClInclude Include="src\Platform\LinWindow.h" />
+    <ClInclude Include="src\Platform\LinWindow.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\MacWindow.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\WinWindow.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\OnEngine\Application.cpp">
       <Filter>OnEngine</Filter>
     </ClCompile>
+    <ClCompile Include="src\OnEngine\Layers\Layer.cpp">
+      <Filter>OnEngine\Layers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OnEngine\Layers\LayerSatck.cpp">
+      <Filter>OnEngine\Layers</Filter>
+    </ClCompile>
     <ClCompile Include="src\OnEngine\Log.cpp">
       <Filter>OnEngine</Filter>
     </ClCompile>
     <ClCompile Include="src\OnPCH.cpp" />
-    <ClCompile Include="src\Platform\WinWindow.cpp" />
-    <ClCompile Include="src\Platform\MacWindow.cpp" />
-    <ClCompile Include="src\Platform\LinWindow.cpp" />
+    <ClCompile Include="src\Platform\LinWindow.cpp">
+      <Filter>Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\MacWindow.cpp">
+      <Filter>Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\WinWindow.cpp">
+      <Filter>Platform</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

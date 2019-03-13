@@ -68,17 +68,17 @@ project "OnEngine"
         }
 
         filter "configurations:Debug"
-        --buildoptions "/MTd"
+        buildoptions "/MDd"
         defines "ON_DEBUG"
         symbols "On"
 
         filter "configurations:Release"
-        --buildoptions "/MT"
+        buildoptions "/MD"
         defines "ON_RELEASE"
         optimize "On"
 
         filter "configurations:Dist"
-        --buildoptions "/MT"
+        buildoptions "/MD"
         defines "ON_DIST"
         optimize "On"
 
@@ -130,19 +130,16 @@ project "App"
         ]]
 
         filter "configurations:Debug"
-        --buildoptions "/MTd"
+        buildoptions "/MDd"
         defines "ON_DEBUG"
         symbols "On"
 
         filter "configurations:Release"
-        --buildoptions "/MT"
+        buildoptions "/MD"
         defines "ON_RELEASE"
         optimize "On"
 
         filter "configurations:Dist"
-        --buildoptions "/MT"
+        buildoptions "/MD"
         defines "ON_DIST"
         optimize "On"
-
-        --filter { "system:windows", "configurations:Release" }
-        --buildoptions "/MT"

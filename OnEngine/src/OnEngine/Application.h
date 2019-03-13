@@ -1,9 +1,9 @@
 #pragma once
 #include "Defs.h"
-#include "Events\ApplicationEvent.h"
-#include "Events\Event.h"
-
 #include "Window.h"
+#include "OnEngine\Layers\LayerSatck.h"
+#include "Events\Event.h"
+#include "Events\ApplicationEvent.h"
 
 namespace on
 {
@@ -13,6 +13,7 @@ namespace on
     private:
         std::unique_ptr<Window> m_Window;
         bool m_Running = true;
+        LayerSatck m_LayerStack;
 
     public:
         Application();
@@ -21,6 +22,9 @@ namespace on
         void Run();
 
         void OnEvent(Event& event);
+
+        void PushLayer(Layer* layer);
+        void PushOverlay(Layer* overlay);
 
     private:
         bool OnWindowClosed(WindowCloseEvent& event);

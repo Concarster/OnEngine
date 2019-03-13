@@ -25,6 +25,10 @@ namespace on
         {
             glClearColor( 0.5F, 0.8F, 1.0F, 1.0F);
             glClear(GL_COLOR_BUFFER_BIT);
+
+            for (Layer* layer : m_LayerStack)
+                layer->OnUpdate();
+            
             m_Window->OnUpdate();
         }
     }
@@ -35,6 +39,23 @@ namespace on
         distpacher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClosed));
 
         ON_ENGINE_TRACE("{0}", event);
+
+        for (auto iterate = m_LayerStack.end(); iterate != m_LayerStack.begin(); )
+        {
+            (*--iterate)->OnEvent(event);
+            if (event.Handled)
+                break;
+        }
+    }
+
+    void Application::PushLayer(Layer * layer)
+    {
+        m_LayerStack.PushLayer(layer);
+    }
+
+    void Application::PushOverlay(Layer * overlay)
+    {
+        m_LayerStack.PushOverlay(overlay);
     }
 
     bool Application::OnWindowClosed(WindowCloseEvent & event)
