@@ -21,8 +21,10 @@ outputdir = "%{cfg.buildcfg}_%{cfg.system}_%{cfg.architecture}"
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
 IncludeDir["GLFW"] = "OnEngine/Deps/GLFW/include"
+IncludeDir["Glad"] = "OnEngine/Deps/Glad/include"
 
 include "OnEngine/Deps/GLFW"
+include "OnEngine/Deps/Glad"
 
 project "OnEngine" 
     location "OnEngine"
@@ -43,12 +45,14 @@ project "OnEngine"
     includedirs {
         "%{prj.name}/src",
         "%{prj.name}/Deps/spdlog/include",
-        "%{IncludeDir.GLFW}"
+        "%{IncludeDir.GLFW}",
+        "%{IncludeDir.Glad}"
     }
 
     links 
 	{ 
 		"GLFW",
+        "Glad",
 		"opengl32.lib"
 	}
 
@@ -60,7 +64,8 @@ project "OnEngine"
         defines {
              "ON_ENGINE",
              "ON_WINDOW",
-             "ON_BUILD_DLL"
+             "ON_BUILD_DLL",
+             "GLFW_INCLUDE_NONE"
         }
 
         postbuildcommands {

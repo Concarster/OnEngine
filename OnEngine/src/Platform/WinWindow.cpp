@@ -74,8 +74,8 @@ namespace on
         
         glfwMakeContextCurrent(m_Window);
         
-        /*int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
-        HZ_ENGINE_ASSERT(status, "Failed to initialize Glad!");*/
+        int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
+        ON_ENGINE_ASSERT(status, "Failed to initialize Glad!");
         
         glfwSetWindowUserPointer(m_Window, &m_Data);
         
