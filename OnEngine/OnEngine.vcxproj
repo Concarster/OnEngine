@@ -140,7 +140,7 @@
       <PrecompiledHeaderFile>OnPCH.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>ON_ENGINE;ON_WINDOW;ON_BUILD_DLL;GLFW_INCLUDE_NONE;ON_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;Deps\spdlog\include;Deps\GLFW\include;Deps\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;Deps\spdlog\include;Deps\GLFW\include;Deps\Glad\include;Deps\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -163,7 +163,7 @@
       <PrecompiledHeaderFile>OnPCH.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>ON_ENGINE;ON_WINDOW;ON_BUILD_DLL;GLFW_INCLUDE_NONE;ON_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;Deps\spdlog\include;Deps\GLFW\include;Deps\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;Deps\spdlog\include;Deps\GLFW\include;Deps\Glad\include;Deps\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -186,7 +186,7 @@
       <PrecompiledHeaderFile>OnPCH.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>ON_ENGINE;ON_WINDOW;ON_BUILD_DLL;GLFW_INCLUDE_NONE;ON_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;Deps\spdlog\include;Deps\GLFW\include;Deps\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;Deps\spdlog\include;Deps\GLFW\include;Deps\Glad\include;Deps\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -213,7 +213,7 @@
       <PrecompiledHeaderFile>OnPCH.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>ON_ENGINE;ON_WINDOW;ON_BUILD_DLL;GLFW_INCLUDE_NONE;ON_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;Deps\spdlog\include;Deps\GLFW\include;Deps\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;Deps\spdlog\include;Deps\GLFW\include;Deps\Glad\include;Deps\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -240,7 +240,7 @@
       <PrecompiledHeaderFile>OnPCH.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>ON_ENGINE;ON_WINDOW;ON_BUILD_DLL;GLFW_INCLUDE_NONE;ON_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;Deps\spdlog\include;Deps\GLFW\include;Deps\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;Deps\spdlog\include;Deps\GLFW\include;Deps\Glad\include;Deps\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -267,7 +267,7 @@
       <PrecompiledHeaderFile>OnPCH.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>ON_ENGINE;ON_WINDOW;ON_BUILD_DLL;GLFW_INCLUDE_NONE;ON_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;Deps\spdlog\include;Deps\GLFW\include;Deps\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;Deps\spdlog\include;Deps\GLFW\include;Deps\Glad\include;Deps\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -297,17 +297,21 @@
     <ClInclude Include="src\OnEngine\Events\Event.h" />
     <ClInclude Include="src\OnEngine\Events\KeyEvent.h" />
     <ClInclude Include="src\OnEngine\Events\MouseEvent.h" />
+    <ClInclude Include="src\OnEngine\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\OnEngine\Layers\Layer.h" />
     <ClInclude Include="src\OnEngine\Layers\LayerSatck.h" />
     <ClInclude Include="src\OnEngine\Log.h" />
+    <ClInclude Include="src\OnEngine\Util\OnINC.h" />
     <ClInclude Include="src\OnEngine\Window.h" />
     <ClInclude Include="src\OnPCH.h" />
     <ClInclude Include="src\Platform\LinWindow.h" />
     <ClInclude Include="src\Platform\MacWindow.h" />
+    <ClInclude Include="src\Platform\OpenGL\ImGuiGLRenderer.h" />
     <ClInclude Include="src\Platform\WinWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\OnEngine\Application.cpp" />
+    <ClCompile Include="src\OnEngine\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\OnEngine\Layers\Layer.cpp" />
     <ClCompile Include="src\OnEngine\Layers\LayerSatck.cpp" />
     <ClCompile Include="src\OnEngine\Log.cpp" />
@@ -316,6 +320,7 @@
     </ClCompile>
     <ClCompile Include="src\Platform\LinWindow.cpp" />
     <ClCompile Include="src\Platform\MacWindow.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\ImGuiGLRenderer.cpp" />
     <ClCompile Include="src\Platform\WinWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -324,6 +329,9 @@
     </ProjectReference>
     <ProjectReference Include="Deps\Glad\Glad.vcxproj">
       <Project>{BDD6857C-A90D-870D-52FA-6C103E10030F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="Deps\imgui\ImGui.vcxproj">
+      <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

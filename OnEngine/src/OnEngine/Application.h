@@ -11,6 +11,8 @@ namespace on
     class ON_API Application
     {
     private:
+        static Application* s_Instance;
+
         std::unique_ptr<Window> m_Window;
         bool m_Running = true;
         LayerSatck m_LayerStack;
@@ -25,6 +27,9 @@ namespace on
 
         void PushLayer(Layer* layer);
         void PushOverlay(Layer* overlay);
+
+        inline static Application& GetInstance() { return *s_Instance; }
+        inline Window& GetWindow() { return *m_Window; }
 
     private:
         bool OnWindowClosed(WindowCloseEvent& event);

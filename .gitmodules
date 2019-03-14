@@ -4,3 +4,6 @@
 [submodule "OnEngine/Deps/GLFW"]
 	path = OnEngine/Deps/GLFW
 	url = https://github.com/glfw/glfw
+[submodule "OnEngine/Deps/imgui"]
+	path = OnEngine/Deps/imgui
+	url = https://github.com/ocornut/imgui
