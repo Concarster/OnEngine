@@ -23,7 +23,7 @@ namespace on {
         AppUpdate, 
         AppRender,
 		KeyPressed, 
-        KeyReleased, 
+        KeyReleased,
         KeyTyped,
 		MouseButtonPressed, 
         MouseButtonReleased, 

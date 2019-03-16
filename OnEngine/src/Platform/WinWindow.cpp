@@ -130,6 +130,15 @@ namespace on
             }
         });
 
+        glfwSetCharCallback(m_Window, [](GLFWwindow* window, unsigned int keyCode)
+        {
+            WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
+
+            KeyTypedEvent event(keyCode);
+
+            data.EventCallBack(event);
+        });
+
         glfwSetMouseButtonCallback(m_Window, [](GLFWwindow* window, int button, int action, int mods)
         {
             WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
