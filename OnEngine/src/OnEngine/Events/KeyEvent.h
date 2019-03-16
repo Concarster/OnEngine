@@ -79,6 +79,7 @@ namespace on {
 		EVENT_CLASS_TYPE(KeyTyped)
 	};
 
+
     class ON_API KeyTypeEvent : public KeyEvent
     {
     public:

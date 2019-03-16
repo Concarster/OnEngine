@@ -29,6 +29,8 @@ namespace on
         void PushOverlay(Layer* overlay);
 
         inline static Application& GetInstance() { return *s_Instance; }
+
+        /*Get a windows ptr*/
         inline Window& GetWindow() { return *m_Window; }
 
     private:
