@@ -1,27 +1,30 @@
 #pragma once
 #include "OnEngine\Defs.h"
-#include "OnEngine\Util\LoadShaders.h"
+#include "OnEngine\Objs\Objects.h"
 
 namespace on
 {
 
-    class ON_API Render
+    class ON_API Render : public Objects
     {
     private:
-        /*The LoadShaders Obj*/
-        LoadShaders m_Shader;
+        /*Getting The Objts*/
+        Objects m_Obj;
 
-        /*This will identify our GLSL Program Shaders*/
-        GLuint m_ProgramID;
+        ///*The LoadShaders Obj*/
+        //LoadShaders m_Shader;
 
-        /*This will identify our Vertex Array Object*/
-        GLuint m_VAO;
+        ///*This will identify our GLSL Program Shaders*/
+        //GLuint m_ProgramID;
 
-        /*This will identify our Vertex Buffer Object*/
-        GLuint m_VBO;
+        ///*This will identify our Vertex Array Object*/
+        //GLuint m_VAO;
 
-        /*This will identify our Element Buffer Object*/
-        GLuint m_EBO;
+        ///*This will identify our Vertex Buffer Object*/
+        //GLuint m_VBO;
+
+        ///*This will identify our Element Buffer Object*/
+        //GLuint m_EBO;
 
     public:
         Render();

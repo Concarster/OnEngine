@@ -86,6 +86,8 @@
     <ClInclude Include="src\Platform\WinWindow.h">
       <Filter>Platform</Filter>
     </ClInclude>
+    <ClInclude Include="src\OnEngine\Objs\Objects.h" />
+    <ClInclude Include="src\OnEngine\Rendering\GLRender.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\OnEngine\Application.cpp">
@@ -122,5 +124,7 @@
     <ClCompile Include="src\Platform\WinWindow.cpp">
       <Filter>Platform</Filter>
     </ClCompile>
+    <ClCompile Include="src\OnEngine\Objs\Objects.cpp" />
+    <ClCompile Include="src\OnEngine\Rendering\GLRender.cpp" />
   </ItemGroup>
 </Project>

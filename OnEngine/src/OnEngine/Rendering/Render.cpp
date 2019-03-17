@@ -38,9 +38,12 @@ namespace on
     {
         // Create and compile our GLSL program from the shaders
         m_ProgramID = m_Shader.Load("Assets/Shaders/VertexShader.vert", "Assets/Shaders/FragmentShader.frag");
-        
+        /*GLuint m_ProgramID = m_Obj.GetProgramId();
+        m_ProgramID = m_Obj.GetShader().Load("Assets/Shaders/VertexShader.vert", "Assets/Shaders/FragmentShader.frag");*/
+
         // Use our shader
         glUseProgram(m_ProgramID);
+        //glUseProgram(m_Obj.GetProgramId());
     }
 
     void Render::Draw()

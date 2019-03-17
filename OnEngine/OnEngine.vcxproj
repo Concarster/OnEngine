@@ -289,6 +289,8 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\OnEngine\Rendering\GLRender.h" />
+    <ClInclude Include="src\OnEngine\Objs\Objects.h" />
     <ClInclude Include="src\OnEngine.h" />
     <ClInclude Include="src\OnEngine\Application.h" />
     <ClInclude Include="src\OnEngine\Defs.h" />
@@ -312,6 +314,8 @@
     <ClInclude Include="src\Platform\WinWindow.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\OnEngine\Rendering\GLRender.cpp" />
+    <ClCompile Include="src\OnEngine\Objs\Objects.cpp" />
     <ClCompile Include="src\OnEngine\Application.cpp" />
     <ClCompile Include="src\OnEngine\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\OnEngine\Layers\Layer.cpp" />
