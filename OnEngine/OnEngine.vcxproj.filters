@@ -74,20 +74,22 @@
       <Filter>OnEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\OnPCH.h" />
-    <ClInclude Include="src\Platform\LinWindow.h">
-      <Filter>Platform</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Platform\MacWindow.h">
-      <Filter>Platform</Filter>
-    </ClInclude>
     <ClInclude Include="src\Platform\OpenGL\ImGuiGLRenderer.h">
       <Filter>Platform\OpenGL</Filter>
     </ClInclude>
-    <ClInclude Include="src\Platform\WinWindow.h">
-      <Filter>Platform</Filter>
-    </ClInclude>
     <ClInclude Include="src\OnEngine\Objs\Objects.h" />
     <ClInclude Include="src\OnEngine\Rendering\GLRender.h" />
+    <ClInclude Include="src\OnEngine\IImput.h" />
+    <ClInclude Include="src\Platform\Mac\MacWindow.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Linux\LinWindow.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Window\WinWindow.h">
+      <Filter>Platform</Filter>
+    </ClInclude>
+    <ClInclude Include="WinWindowInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\OnEngine\Application.cpp">
@@ -112,19 +114,20 @@
       <Filter>OnEngine\Util</Filter>
     </ClCompile>
     <ClCompile Include="src\OnPCH.cpp" />
-    <ClCompile Include="src\Platform\LinWindow.cpp">
-      <Filter>Platform</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Platform\MacWindow.cpp">
-      <Filter>Platform</Filter>
-    </ClCompile>
     <ClCompile Include="src\Platform\OpenGL\ImGuiGLRenderer.cpp">
       <Filter>Platform\OpenGL</Filter>
     </ClCompile>
-    <ClCompile Include="src\Platform\WinWindow.cpp">
-      <Filter>Platform</Filter>
-    </ClCompile>
     <ClCompile Include="src\OnEngine\Objs\Objects.cpp" />
     <ClCompile Include="src\OnEngine\Rendering\GLRender.cpp" />
+    <ClCompile Include="src\Platform\Mac\MacWindow.cpp">
+      <Filter>Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Linux\LinWindow.cpp">
+      <Filter>Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Window\WinWindow.cpp">
+      <Filter>Platform</Filter>
+    </ClCompile>
+    <ClCompile Include="WinWindowInput.cpp" />
   </ItemGroup>
 </Project>

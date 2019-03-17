@@ -289,6 +289,7 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\OnEngine\IImput.h" />
     <ClInclude Include="src\OnEngine\Rendering\GLRender.h" />
     <ClInclude Include="src\OnEngine\Objs\Objects.h" />
     <ClInclude Include="src\OnEngine.h" />
@@ -308,10 +309,11 @@
     <ClInclude Include="src\OnEngine\Util\OnINC.h" />
     <ClInclude Include="src\OnEngine\Window.h" />
     <ClInclude Include="src\OnPCH.h" />
-    <ClInclude Include="src\Platform\LinWindow.h" />
-    <ClInclude Include="src\Platform\MacWindow.h" />
+    <ClInclude Include="src\Platform\Linux\LinWindow.h" />
+    <ClInclude Include="src\Platform\Mac\MacWindow.h" />
     <ClInclude Include="src\Platform\OpenGL\ImGuiGLRenderer.h" />
-    <ClInclude Include="src\Platform\WinWindow.h" />
+    <ClInclude Include="src\Platform\Window\WinWindow.h" />
+    <ClInclude Include="WinWindowInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\OnEngine\Rendering\GLRender.cpp" />
@@ -326,10 +328,11 @@
     <ClCompile Include="src\OnPCH.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="src\Platform\LinWindow.cpp" />
-    <ClCompile Include="src\Platform\MacWindow.cpp" />
+    <ClCompile Include="src\Platform\Linux\LinWindow.cpp" />
+    <ClCompile Include="src\Platform\Mac\MacWindow.cpp" />
     <ClCompile Include="src\Platform\OpenGL\ImGuiGLRenderer.cpp" />
-    <ClCompile Include="src\Platform\WinWindow.cpp" />
+    <ClCompile Include="src\Platform\Window\WinWindow.cpp" />
+    <ClCompile Include="WinWindowInput.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Deps\GLFW\GLFW.vcxproj">

@@ -4,6 +4,9 @@
 
 class ON_API Objects
 {
+private:
+    //static Objects* s_InstObj;
+
 protected:
     /*The LoadShaders Obj*/
     on::LoadShaders m_Shader;
@@ -27,6 +30,8 @@ protected:
 public:
     Objects();
     ~Objects();
+
+    //inline static Objects& GetInstObj() { return *s_InstObj; }
 
     /*Getting the shader Program*/
     on::LoadShaders GetShader();
