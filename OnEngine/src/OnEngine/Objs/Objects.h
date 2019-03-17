@@ -32,15 +32,19 @@ public:
     on::LoadShaders GetShader();
 
     /*Getting The Program ID*/
-    GLuint GetProgramId();
-
+    //GLuint GetProgramId();
+    unsigned int GetProgramId();
+    
     /*Get Vertex Array Object*/
-    GLuint GetVAO();
-
+    //GLuint GetVAO();
+    unsigned int GetVAO();
+    
     /*Get Vertex Buffer Object*/
-    GLuint GetVBO();
-
+    //GLuint GetVBO();
+    unsigned int GetVBO();
+    
     /*Get Element Buffer Object*/
-    GLuint GetEBO();
+    //GLuint GetEBO();
+    unsigned int GetEBO();
 };
 
