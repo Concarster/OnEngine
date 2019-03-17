@@ -13,6 +13,9 @@
     <Filter Include="OnEngine\Layers">
       <UniqueIdentifier>{3719654D-A3A4-D211-ACB5-550618C02E12}</UniqueIdentifier>
     </Filter>
+    <Filter Include="OnEngine\Rendering">
+      <UniqueIdentifier>{C5D80AB7-B1BC-CB0C-1A1D-C65F0620B68E}</UniqueIdentifier>
+    </Filter>
     <Filter Include="OnEngine\Util">
       <UniqueIdentifier>{C59B1C6A-315C-98A0-FA96-E11D6616DD7C}</UniqueIdentifier>
     </Filter>
@@ -58,6 +61,12 @@
     <ClInclude Include="src\OnEngine\Log.h">
       <Filter>OnEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\OnEngine\Rendering\Render.h">
+      <Filter>OnEngine\Rendering</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OnEngine\Util\LoadShaders.h">
+      <Filter>OnEngine\Util</Filter>
+    </ClInclude>
     <ClInclude Include="src\OnEngine\Util\OnINC.h">
       <Filter>OnEngine\Util</Filter>
     </ClInclude>
@@ -93,6 +102,12 @@
     </ClCompile>
     <ClCompile Include="src\OnEngine\Log.cpp">
       <Filter>OnEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OnEngine\Rendering\Render.cpp">
+      <Filter>OnEngine\Rendering</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OnEngine\Util\LoadShaders.cpp">
+      <Filter>OnEngine\Util</Filter>
     </ClCompile>
     <ClCompile Include="src\OnPCH.cpp" />
     <ClCompile Include="src\Platform\LinWindow.cpp">

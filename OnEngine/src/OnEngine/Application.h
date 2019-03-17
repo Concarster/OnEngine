@@ -4,6 +4,8 @@
 #include "OnEngine\Layers\LayerSatck.h"
 #include "Events\Event.h"
 #include "Events\ApplicationEvent.h"
+#include "OnEngine\Rendering\Render.h"
+
 
 namespace on
 {
@@ -16,6 +18,8 @@ namespace on
         std::unique_ptr<Window> m_Window;
         bool m_Running = true;
         LayerSatck m_LayerStack;
+       
+        Render m_Render;
 
     public:
         Application();

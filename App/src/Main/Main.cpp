@@ -10,7 +10,7 @@ public:
 
     void OnUpdate() override
     {
-        ON_CLIENT_INFO("ExampleLayer::Update");
+        //ON_CLIENT_INFO("ExampleLayer::Update");
     }
 
     void OnEvent(on::Event& event) override

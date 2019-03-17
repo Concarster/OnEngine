@@ -1,6 +1,7 @@
 #include "OnPCH.h"
 #include "Application.h"
 
+
 #include <glad\glad.h>
 
 namespace on
@@ -26,16 +27,21 @@ namespace on
 
     void Application::Run()
     {
+        m_Render.Init();
+        m_Render.Setup();
+
         while (m_Running)
         {
-            glClearColor( 0.5F, 0.8F, 1.0F, 1.0F);
-            glClear(GL_COLOR_BUFFER_BIT);
+            m_Render.Draw();
 
             for (Layer* layer : m_LayerStack)
                 layer->OnUpdate();
             
             m_Window->OnUpdate();
+            
         }
+
+        m_Render.CleanUp();
     }
 
     void Application::OnEvent(Event & event)
@@ -57,6 +63,7 @@ namespace on
     {
         m_LayerStack.PushLayer(layer);
         layer->OnAttach();
+        
     }
 
     void Application::PushOverlay(Layer * overlay)

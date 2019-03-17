@@ -301,6 +301,8 @@
     <ClInclude Include="src\OnEngine\Layers\Layer.h" />
     <ClInclude Include="src\OnEngine\Layers\LayerSatck.h" />
     <ClInclude Include="src\OnEngine\Log.h" />
+    <ClInclude Include="src\OnEngine\Rendering\Render.h" />
+    <ClInclude Include="src\OnEngine\Util\LoadShaders.h" />
     <ClInclude Include="src\OnEngine\Util\OnINC.h" />
     <ClInclude Include="src\OnEngine\Window.h" />
     <ClInclude Include="src\OnPCH.h" />
@@ -315,6 +317,8 @@
     <ClCompile Include="src\OnEngine\Layers\Layer.cpp" />
     <ClCompile Include="src\OnEngine\Layers\LayerSatck.cpp" />
     <ClCompile Include="src\OnEngine\Log.cpp" />
+    <ClCompile Include="src\OnEngine\Rendering\Render.cpp" />
+    <ClCompile Include="src\OnEngine\Util\LoadShaders.cpp" />
     <ClCompile Include="src\OnPCH.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>

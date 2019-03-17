@@ -114,11 +114,13 @@ project "App"
 
     includedirs {
         "Onengine/Deps/spdlog/include",
-        "Onengine/src"
+        "Onengine/src",
+        "%{IncludeDir.Glad}",
     }
 
     links {
-        "OnEngine"
+        "OnEngine",
+        "Glad"
     }
 
     filter"system:windows"
