@@ -289,50 +289,50 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\OnEngine\IImput.h" />
-    <ClInclude Include="src\OnEngine\Rendering\GLRender.h" />
-    <ClInclude Include="src\OnEngine\Objs\Objects.h" />
     <ClInclude Include="src\OnEngine\Application.h" />
-    <ClInclude Include="src\OnEngine\Defs.h" />
     <ClInclude Include="src\OnEngine\EntryPoint.h" />
     <ClInclude Include="src\OnEngine\Events\ApplicationEvent.h" />
     <ClInclude Include="src\OnEngine\Events\Event.h" />
     <ClInclude Include="src\OnEngine\Events\KeyEvent.h" />
     <ClInclude Include="src\OnEngine\Events\MouseEvent.h" />
+    <ClInclude Include="src\OnEngine\IImput.h" />
     <ClInclude Include="src\OnEngine\ImGui\ImGuiLayer.h" />
     <ClInclude Include="src\OnEngine\Layers\Layer.h" />
     <ClInclude Include="src\OnEngine\Layers\LayerSatck.h" />
     <ClInclude Include="src\OnEngine\Log.h" />
+    <ClInclude Include="src\OnEngine\Objs\Objects.h" />
+    <ClInclude Include="src\OnEngine\Platform\Linux\LinWindow.h" />
+    <ClInclude Include="src\OnEngine\Platform\Mac\MacWindow.h" />
+    <ClInclude Include="src\OnEngine\Platform\OpenGL\ImGuiGLRenderer.h" />
+    <ClInclude Include="src\OnEngine\Platform\Window\WinWindow.h" />
+    <ClInclude Include="src\OnEngine\Platform\Window\WinWindowInput.h" />
+    <ClInclude Include="src\OnEngine\Rendering\GLRender.h" />
     <ClInclude Include="src\OnEngine\Rendering\Render.h" />
+    <ClInclude Include="src\OnEngine\Util\Defs.h" />
     <ClInclude Include="src\OnEngine\Util\LoadShaders.h" />
     <ClInclude Include="src\OnEngine\Util\OnApiCode.h" />
     <ClInclude Include="src\OnEngine\Util\OnINC.h" />
     <ClInclude Include="src\OnEngine\Window.h" />
     <ClInclude Include="src\OnPCH.h" />
-    <ClInclude Include="src\Platform\Linux\LinWindow.h" />
-    <ClInclude Include="src\Platform\Mac\MacWindow.h" />
-    <ClInclude Include="src\Platform\OpenGL\ImGuiGLRenderer.h" />
-    <ClInclude Include="src\Platform\Window\WinWindow.h" />
-    <ClInclude Include="src\Platform\Window\WinWindowInput.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\OnEngine\Rendering\GLRender.cpp" />
-    <ClCompile Include="src\OnEngine\Objs\Objects.cpp" />
     <ClCompile Include="src\OnEngine\Application.cpp" />
     <ClCompile Include="src\OnEngine\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\OnEngine\Layers\Layer.cpp" />
     <ClCompile Include="src\OnEngine\Layers\LayerSatck.cpp" />
     <ClCompile Include="src\OnEngine\Log.cpp" />
+    <ClCompile Include="src\OnEngine\Objs\Objects.cpp" />
+    <ClCompile Include="src\OnEngine\Platform\Linux\LinWindow.cpp" />
+    <ClCompile Include="src\OnEngine\Platform\Mac\MacWindow.cpp" />
+    <ClCompile Include="src\OnEngine\Platform\OpenGL\ImGuiGLRenderer.cpp" />
+    <ClCompile Include="src\OnEngine\Platform\Window\WinWindow.cpp" />
+    <ClCompile Include="src\OnEngine\Platform\Window\WinWindowInput.cpp" />
+    <ClCompile Include="src\OnEngine\Rendering\GLRender.cpp" />
     <ClCompile Include="src\OnEngine\Rendering\Render.cpp" />
     <ClCompile Include="src\OnEngine\Util\LoadShaders.cpp" />
     <ClCompile Include="src\OnPCH.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="src\Platform\Linux\LinWindow.cpp" />
-    <ClCompile Include="src\Platform\Mac\MacWindow.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\ImGuiGLRenderer.cpp" />
-    <ClCompile Include="src\Platform\Window\WinWindow.cpp" />
-    <ClCompile Include="src\Platform\Window\WinWindowInput.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Deps\GLFW\GLFW.vcxproj">

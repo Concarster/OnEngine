@@ -13,24 +13,33 @@
     <Filter Include="OnEngine\Layers">
       <UniqueIdentifier>{3719654D-A3A4-D211-ACB5-550618C02E12}</UniqueIdentifier>
     </Filter>
+    <Filter Include="OnEngine\Objs">
+      <UniqueIdentifier>{1505196A-81C5-94A0-4A00-DE1DB67FD97C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OnEngine\Platform">
+      <UniqueIdentifier>{CC3CE503-3853-E399-81CA-6EBBED1FB421}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OnEngine\Platform\Linux">
+      <UniqueIdentifier>{EBD8870C-5710-D0A3-601A-34C7CCD0F69C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OnEngine\Platform\Mac">
+      <UniqueIdentifier>{0CDDA9BA-7849-65B5-413D-FD12AD68871D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OnEngine\Platform\OpenGL">
+      <UniqueIdentifier>{8008FCA4-6C2D-4B25-9578-30B581FC4943}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="OnEngine\Platform\Window">
+      <UniqueIdentifier>{336C2BB7-1F91-7A37-48DC-5FC734607955}</UniqueIdentifier>
+    </Filter>
     <Filter Include="OnEngine\Rendering">
       <UniqueIdentifier>{C5D80AB7-B1BC-CB0C-1A1D-C65F0620B68E}</UniqueIdentifier>
     </Filter>
     <Filter Include="OnEngine\Util">
       <UniqueIdentifier>{C59B1C6A-315C-98A0-FA96-E11D6616DD7C}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Platform">
-      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Platform\OpenGL">
-      <UniqueIdentifier>{1E7D2C1D-8A08-9AE1-9319-1DD6FF23F6E1}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\OnEngine\Application.h">
-      <Filter>OnEngine</Filter>
-    </ClInclude>
-    <ClInclude Include="src\OnEngine\Defs.h">
       <Filter>OnEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\OnEngine\EntryPoint.h">
@@ -48,6 +57,9 @@
     <ClInclude Include="src\OnEngine\Events\MouseEvent.h">
       <Filter>OnEngine\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\OnEngine\IImput.h">
+      <Filter>OnEngine</Filter>
+    </ClInclude>
     <ClInclude Include="src\OnEngine\ImGui\ImGuiLayer.h">
       <Filter>OnEngine\ImGui</Filter>
     </ClInclude>
@@ -60,10 +72,37 @@
     <ClInclude Include="src\OnEngine\Log.h">
       <Filter>OnEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\OnEngine\Objs\Objects.h">
+      <Filter>OnEngine\Objs</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OnEngine\Platform\Linux\LinWindow.h">
+      <Filter>OnEngine\Platform\Linux</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OnEngine\Platform\Mac\MacWindow.h">
+      <Filter>OnEngine\Platform\Mac</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OnEngine\Platform\OpenGL\ImGuiGLRenderer.h">
+      <Filter>OnEngine\Platform\OpenGL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OnEngine\Platform\Window\WinWindow.h">
+      <Filter>OnEngine\Platform\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OnEngine\Platform\Window\WinWindowInput.h">
+      <Filter>OnEngine\Platform\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OnEngine\Rendering\GLRender.h">
+      <Filter>OnEngine\Rendering</Filter>
+    </ClInclude>
     <ClInclude Include="src\OnEngine\Rendering\Render.h">
       <Filter>OnEngine\Rendering</Filter>
     </ClInclude>
+    <ClInclude Include="src\OnEngine\Util\Defs.h">
+      <Filter>OnEngine\Util</Filter>
+    </ClInclude>
     <ClInclude Include="src\OnEngine\Util\LoadShaders.h">
+      <Filter>OnEngine\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OnEngine\Util\OnApiCode.h">
       <Filter>OnEngine\Util</Filter>
     </ClInclude>
     <ClInclude Include="src\OnEngine\Util\OnINC.h">
@@ -73,23 +112,6 @@
       <Filter>OnEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\OnPCH.h" />
-    <ClInclude Include="src\Platform\OpenGL\ImGuiGLRenderer.h">
-      <Filter>Platform\OpenGL</Filter>
-    </ClInclude>
-    <ClInclude Include="src\OnEngine\Objs\Objects.h" />
-    <ClInclude Include="src\OnEngine\Rendering\GLRender.h" />
-    <ClInclude Include="src\OnEngine\IImput.h" />
-    <ClInclude Include="src\Platform\Mac\MacWindow.h">
-      <Filter>Platform</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Platform\Linux\LinWindow.h">
-      <Filter>Platform</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Platform\Window\WinWindow.h">
-      <Filter>Platform</Filter>
-    </ClInclude>
-    <ClInclude Include="src\OnEngine\Util\OnApiCode.h" />
-    <ClInclude Include="src\Platform\Window\WinWindowInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\OnEngine\Application.cpp">
@@ -107,6 +129,27 @@
     <ClCompile Include="src\OnEngine\Log.cpp">
       <Filter>OnEngine</Filter>
     </ClCompile>
+    <ClCompile Include="src\OnEngine\Objs\Objects.cpp">
+      <Filter>OnEngine\Objs</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OnEngine\Platform\Linux\LinWindow.cpp">
+      <Filter>OnEngine\Platform\Linux</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OnEngine\Platform\Mac\MacWindow.cpp">
+      <Filter>OnEngine\Platform\Mac</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OnEngine\Platform\OpenGL\ImGuiGLRenderer.cpp">
+      <Filter>OnEngine\Platform\OpenGL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OnEngine\Platform\Window\WinWindow.cpp">
+      <Filter>OnEngine\Platform\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OnEngine\Platform\Window\WinWindowInput.cpp">
+      <Filter>OnEngine\Platform\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OnEngine\Rendering\GLRender.cpp">
+      <Filter>OnEngine\Rendering</Filter>
+    </ClCompile>
     <ClCompile Include="src\OnEngine\Rendering\Render.cpp">
       <Filter>OnEngine\Rendering</Filter>
     </ClCompile>
@@ -114,20 +157,5 @@
       <Filter>OnEngine\Util</Filter>
     </ClCompile>
     <ClCompile Include="src\OnPCH.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\ImGuiGLRenderer.cpp">
-      <Filter>Platform\OpenGL</Filter>
-    </ClCompile>
-    <ClCompile Include="src\OnEngine\Objs\Objects.cpp" />
-    <ClCompile Include="src\OnEngine\Rendering\GLRender.cpp" />
-    <ClCompile Include="src\Platform\Mac\MacWindow.cpp">
-      <Filter>Platform</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Platform\Linux\LinWindow.cpp">
-      <Filter>Platform</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Platform\Window\WinWindow.cpp">
-      <Filter>Platform</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Platform\Window\WinWindowInput.cpp" />
   </ItemGroup>
 </Project>

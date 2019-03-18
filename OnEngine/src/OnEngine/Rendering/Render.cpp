@@ -24,20 +24,13 @@ namespace on
         glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // To make MacOS happy; should not be needed
         glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); // We don't want the old OpenGL 
 
-        ///* Dark blue background */
-        //glClearColor(0.0f, 0.0f, 0.4f, 0.0f);
-        //
-        ///* Ligth blue background */
-        ////glClearColor(0.5F, 0.8F, 1.0F, 1.0F);
-
-        //glClear(GL_COLOR_BUFFER_BIT);
-
     }
 
     void Render::Setup()
     {
         // Create and compile our GLSL program from the shaders
         m_ProgramID = m_Shader.Load("Assets/Shaders/VertexShader.vert", "Assets/Shaders/FragmentShader.frag");
+        
         /*GLuint m_ProgramID = m_Obj.GetProgramId();
         m_ProgramID = m_Obj.GetShader().Load("Assets/Shaders/VertexShader.vert", "Assets/Shaders/FragmentShader.frag");*/
 

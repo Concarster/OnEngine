@@ -1,7 +1,7 @@
 #pragma once
 #include <glad\glad.h>
 
-#include "OnEngine\Defs.h"
+#include "OnEngine/Util/Defs.h"
 
 
 namespace on

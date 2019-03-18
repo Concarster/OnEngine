@@ -1,6 +1,6 @@
 #pragma once
 #include "OnPCH.h"
-#include "OnEngine\Defs.h"
+#include "OnEngine/Util/Defs.h"
 
 #include "OnEngine\Events\Event.h"
 

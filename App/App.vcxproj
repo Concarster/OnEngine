@@ -263,11 +263,6 @@
       <Project>{BDD6857C-A90D-870D-52FA-6C103E10030F}</Project>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Assets\Shaders\FragmentShader.frag" />
-    <None Include="Assets\Shaders\VertexShader.vert" />
-    <None Include="imgui.ini" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

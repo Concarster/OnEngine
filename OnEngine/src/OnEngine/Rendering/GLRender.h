@@ -1,5 +1,5 @@
 #pragma once
-#include "OnEngine\Defs.h"
+#include "OnEngine\Util\Defs.h"
 #include "OnEngine\Objs\Objects.h"
 
 namespace on
