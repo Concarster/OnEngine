@@ -26,6 +26,10 @@ namespace on
         //GLuint m_VBO;
         unsigned int m_VBO;
 
+        /*This will identify our Color Buffer Object*/
+        //GLuint m_CBO;
+        unsigned int m_CBO;
+
         /*This will identify our Element Buffer Object*/
         //GLuint m_EBO;
         unsigned int m_EBO;

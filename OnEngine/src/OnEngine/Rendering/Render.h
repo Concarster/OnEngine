@@ -42,6 +42,8 @@ namespace on
 
         void Cube();
 
+        void CubeColor();
+
         void CubeFloat();
     };
 
