@@ -38,8 +38,8 @@ namespace on
             for (Layer* layer : m_LayerStack)
                 layer->OnUpdate();
 
-            auto[x, y] = IImput::GetMousePosition();
-            ON_ENGINE_TRACE("X :{0}, Y: {1}", x, y);
+            /*auto[x, y] = IImput::GetMousePosition();
+            ON_ENGINE_TRACE("X :{0}, Y: {1}", x, y);*/
             
             m_Window->OnUpdate();
             

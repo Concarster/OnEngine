@@ -27,7 +27,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\OnEngine.h" />
     <ClInclude Include="src\OnEngine\Application.h">
       <Filter>OnEngine</Filter>
     </ClInclude>
@@ -89,7 +88,8 @@
     <ClInclude Include="src\Platform\Window\WinWindow.h">
       <Filter>Platform</Filter>
     </ClInclude>
-    <ClInclude Include="WinWindowInput.h" />
+    <ClInclude Include="src\OnEngine\Util\OnApiCode.h" />
+    <ClInclude Include="src\Platform\Window\WinWindowInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\OnEngine\Application.cpp">
@@ -128,6 +128,6 @@
     <ClCompile Include="src\Platform\Window\WinWindow.cpp">
       <Filter>Platform</Filter>
     </ClCompile>
-    <ClCompile Include="WinWindowInput.cpp" />
+    <ClCompile Include="src\Platform\Window\WinWindowInput.cpp" />
   </ItemGroup>
 </Project>
