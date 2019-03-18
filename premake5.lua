@@ -3,6 +3,11 @@ workspace "OnEngine"
      architecture "x86"
      architecture "x64"
      --architecture "x86_64"
+
+     startproject "App"
+
+     filter "system:windows"
+		disablewarnings { "4996", "4251" }
                   
 platforms {       -- Dropdown Solution Confg Platforms section in VS
     
@@ -20,13 +25,20 @@ outputdir = "%{cfg.buildcfg}_%{cfg.system}_%{cfg.architecture}"
 
 -- Include directories relative to root folder (solution directory)
 IncludeDir = {}
-IncludeDir["GLFW"] = "OnEngine/Deps/GLFW/include"
-IncludeDir["Glad"] = "OnEngine/Deps/Glad/include"
+IncludeDir["GLFW"]  = "OnEngine/Deps/GLFW/include"
+IncludeDir["Glad"]  = "OnEngine/Deps/Glad/include"
 IncludeDir["ImGui"] = "OnEngine/Deps/imgui"
+IncludeDir["glm"]   = "OnEngine/Deps/glm"
+
+group "Dependencies"
 
 include "OnEngine/Deps/GLFW"
 include "OnEngine/Deps/Glad"
 include "OnEngine/Deps/imgui"
+--include "OnEngine/Deps/glm"
+
+ group ""
+
 
 project "OnEngine" 
     location "OnEngine"
@@ -41,7 +53,9 @@ project "OnEngine"
 
     files {
         "%{prj.name}/src/**.h",
-        "%{prj.name}/src/**.cpp"
+        "%{prj.name}/src/**.cpp",
+        --"%{prj.name}/Deps/glm/glm/**.cpp",
+        --"%{prj.name}/Deps/glm/glm/**.inl"
     }
 
     includedirs {
@@ -49,7 +63,8 @@ project "OnEngine"
         "%{prj.name}/Deps/spdlog/include",
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.Glad}",
-        "%{IncludeDir.ImGui}"
+        "%{IncludeDir.ImGui}",
+        "%{IncludeDir.glm}"
     }
 
     links { 
@@ -72,7 +87,8 @@ project "OnEngine"
         }
 
         postbuildcommands {
-            ("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/App")
+            --("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/App")
+            ("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/App/\"")
         }
 
         filter "configurations:Debug"
@@ -109,13 +125,16 @@ project "App"
 
     files {
         "%{prj.name}/src/**.h",
-        "%{prj.name}/src/**.cpp"
+        "%{prj.name}/src/**.cpp",
+        --"%{prj.name}/Deps/glm/glm/**.cpp",
+        --"%{prj.name}/Deps/glm/glm/**.inl"
     }
 
     includedirs {
         "Onengine/Deps/spdlog/include",
         "Onengine/src",
         "%{IncludeDir.Glad}",
+        "%{IncludeDir.glm}"
     }
 
     links {

@@ -139,8 +139,9 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>OnPCH.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
+      <DisableSpecificWarnings>4996;4251;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions>ON_ENGINE;ON_WINDOW;ON_BUILD_DLL;GLFW_INCLUDE_NONE;ON_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;Deps\spdlog\include;Deps\GLFW\include;Deps\Glad\include;Deps\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;Deps\spdlog\include;Deps\GLFW\include;Deps\Glad\include;Deps\imgui;Deps\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -154,7 +155,7 @@
       <ImportLibrary>..\bin\Debug_windows_x86_64\OnEngine\OnEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Debug_windows_x86_64\OnEngine\OnEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Debug_windows_x86_64\OnEngine\OnEngine.dll ..\bin\Debug_windows_x86_64\App &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug_windows_x86_64\OnEngine\OnEngine.dll ..\bin\Debug_windows_x86_64\App &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Debug_windows_x86_64\OnEngine\OnEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Debug_windows_x86_64\OnEngine\OnEngine.dll "..\bin\Debug_windows_x86_64\App\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug_windows_x86_64\OnEngine\OnEngine.dll "..\bin\Debug_windows_x86_64\App\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -162,8 +163,9 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>OnPCH.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
+      <DisableSpecificWarnings>4996;4251;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions>ON_ENGINE;ON_WINDOW;ON_BUILD_DLL;GLFW_INCLUDE_NONE;ON_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;Deps\spdlog\include;Deps\GLFW\include;Deps\Glad\include;Deps\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;Deps\spdlog\include;Deps\GLFW\include;Deps\Glad\include;Deps\imgui;Deps\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -177,7 +179,7 @@
       <ImportLibrary>..\bin\Debug_windows_x86_64\OnEngine\OnEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Debug_windows_x86_64\OnEngine\OnEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Debug_windows_x86_64\OnEngine\OnEngine.dll ..\bin\Debug_windows_x86_64\App &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug_windows_x86_64\OnEngine\OnEngine.dll ..\bin\Debug_windows_x86_64\App &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Debug_windows_x86_64\OnEngine\OnEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Debug_windows_x86_64\OnEngine\OnEngine.dll "..\bin\Debug_windows_x86_64\App\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug_windows_x86_64\OnEngine\OnEngine.dll "..\bin\Debug_windows_x86_64\App\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Win32|x64'">
@@ -185,8 +187,9 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>OnPCH.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
+      <DisableSpecificWarnings>4996;4251;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions>ON_ENGINE;ON_WINDOW;ON_BUILD_DLL;GLFW_INCLUDE_NONE;ON_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;Deps\spdlog\include;Deps\GLFW\include;Deps\Glad\include;Deps\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;Deps\spdlog\include;Deps\GLFW\include;Deps\Glad\include;Deps\imgui;Deps\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -204,7 +207,7 @@
       <ImportLibrary>..\bin\Release_windows_x86_64\OnEngine\OnEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Release_windows_x86_64\OnEngine\OnEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Release_windows_x86_64\OnEngine\OnEngine.dll ..\bin\Release_windows_x86_64\App &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release_windows_x86_64\OnEngine\OnEngine.dll ..\bin\Release_windows_x86_64\App &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Release_windows_x86_64\OnEngine\OnEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Release_windows_x86_64\OnEngine\OnEngine.dll "..\bin\Release_windows_x86_64\App\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release_windows_x86_64\OnEngine\OnEngine.dll "..\bin\Release_windows_x86_64\App\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -212,8 +215,9 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>OnPCH.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
+      <DisableSpecificWarnings>4996;4251;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions>ON_ENGINE;ON_WINDOW;ON_BUILD_DLL;GLFW_INCLUDE_NONE;ON_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;Deps\spdlog\include;Deps\GLFW\include;Deps\Glad\include;Deps\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;Deps\spdlog\include;Deps\GLFW\include;Deps\Glad\include;Deps\imgui;Deps\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -231,7 +235,7 @@
       <ImportLibrary>..\bin\Release_windows_x86_64\OnEngine\OnEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Release_windows_x86_64\OnEngine\OnEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Release_windows_x86_64\OnEngine\OnEngine.dll ..\bin\Release_windows_x86_64\App &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release_windows_x86_64\OnEngine\OnEngine.dll ..\bin\Release_windows_x86_64\App &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Release_windows_x86_64\OnEngine\OnEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Release_windows_x86_64\OnEngine\OnEngine.dll "..\bin\Release_windows_x86_64\App\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release_windows_x86_64\OnEngine\OnEngine.dll "..\bin\Release_windows_x86_64\App\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist Win32|x64'">
@@ -239,8 +243,9 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>OnPCH.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
+      <DisableSpecificWarnings>4996;4251;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions>ON_ENGINE;ON_WINDOW;ON_BUILD_DLL;GLFW_INCLUDE_NONE;ON_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;Deps\spdlog\include;Deps\GLFW\include;Deps\Glad\include;Deps\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;Deps\spdlog\include;Deps\GLFW\include;Deps\Glad\include;Deps\imgui;Deps\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -258,7 +263,7 @@
       <ImportLibrary>..\bin\Dist_windows_x86_64\OnEngine\OnEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Dist_windows_x86_64\OnEngine\OnEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Dist_windows_x86_64\OnEngine\OnEngine.dll ..\bin\Dist_windows_x86_64\App &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist_windows_x86_64\OnEngine\OnEngine.dll ..\bin\Dist_windows_x86_64\App &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Dist_windows_x86_64\OnEngine\OnEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Dist_windows_x86_64\OnEngine\OnEngine.dll "..\bin\Dist_windows_x86_64\App\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist_windows_x86_64\OnEngine\OnEngine.dll "..\bin\Dist_windows_x86_64\App\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
@@ -266,8 +271,9 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>OnPCH.h</PrecompiledHeaderFile>
       <WarningLevel>Level3</WarningLevel>
+      <DisableSpecificWarnings>4996;4251;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions>ON_ENGINE;ON_WINDOW;ON_BUILD_DLL;GLFW_INCLUDE_NONE;ON_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>src;Deps\spdlog\include;Deps\GLFW\include;Deps\Glad\include;Deps\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>src;Deps\spdlog\include;Deps\GLFW\include;Deps\Glad\include;Deps\imgui;Deps\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -285,7 +291,7 @@
       <ImportLibrary>..\bin\Dist_windows_x86_64\OnEngine\OnEngine.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Dist_windows_x86_64\OnEngine\OnEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Dist_windows_x86_64\OnEngine\OnEngine.dll ..\bin\Dist_windows_x86_64\App &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist_windows_x86_64\OnEngine\OnEngine.dll ..\bin\Dist_windows_x86_64\App &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Dist_windows_x86_64\OnEngine\OnEngine.dll\ (xcopy /Q /E /Y /I ..\bin\Dist_windows_x86_64\OnEngine\OnEngine.dll "..\bin\Dist_windows_x86_64\App\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist_windows_x86_64\OnEngine\OnEngine.dll "..\bin\Dist_windows_x86_64\App\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>

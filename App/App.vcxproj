@@ -138,8 +138,9 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
+      <DisableSpecificWarnings>4996;4251;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions>ON_ENGINE;ON_WINDOW;ON_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Onengine\Deps\spdlog\include;..\Onengine\src;..\OnEngine\Deps\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Onengine\Deps\spdlog\include;..\Onengine\src;..\OnEngine\Deps\Glad\include;..\OnEngine\Deps\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -155,8 +156,9 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
+      <DisableSpecificWarnings>4996;4251;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions>ON_ENGINE;ON_WINDOW;ON_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Onengine\Deps\spdlog\include;..\Onengine\src;..\OnEngine\Deps\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Onengine\Deps\spdlog\include;..\Onengine\src;..\OnEngine\Deps\Glad\include;..\OnEngine\Deps\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -172,8 +174,9 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
+      <DisableSpecificWarnings>4996;4251;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions>ON_ENGINE;ON_WINDOW;ON_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Onengine\Deps\spdlog\include;..\Onengine\src;..\OnEngine\Deps\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Onengine\Deps\spdlog\include;..\Onengine\src;..\OnEngine\Deps\Glad\include;..\OnEngine\Deps\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -193,8 +196,9 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
+      <DisableSpecificWarnings>4996;4251;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions>ON_ENGINE;ON_WINDOW;ON_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Onengine\Deps\spdlog\include;..\Onengine\src;..\OnEngine\Deps\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Onengine\Deps\spdlog\include;..\Onengine\src;..\OnEngine\Deps\Glad\include;..\OnEngine\Deps\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -214,8 +218,9 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
+      <DisableSpecificWarnings>4996;4251;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions>ON_ENGINE;ON_WINDOW;ON_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Onengine\Deps\spdlog\include;..\Onengine\src;..\OnEngine\Deps\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Onengine\Deps\spdlog\include;..\Onengine\src;..\OnEngine\Deps\Glad\include;..\OnEngine\Deps\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -235,8 +240,9 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
+      <DisableSpecificWarnings>4996;4251;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions>ON_ENGINE;ON_WINDOW;ON_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Onengine\Deps\spdlog\include;..\Onengine\src;..\OnEngine\Deps\Glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Onengine\Deps\spdlog\include;..\Onengine\src;..\OnEngine\Deps\Glad\include;..\OnEngine\Deps\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
