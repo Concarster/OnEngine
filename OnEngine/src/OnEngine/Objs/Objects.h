@@ -30,6 +30,10 @@ namespace on
         //GLuint m_EBO;
         unsigned int m_EBO;
 
+        /*This will identify our MatrixID Object*/
+        //GLuint MatrixID;
+        unsigned int m_MatrixID;
+
     public:
         Objects();
         ~Objects();

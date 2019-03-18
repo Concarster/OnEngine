@@ -17,7 +17,9 @@ namespace on
 
         void Init();
 
-        void Setup();
+        void CompileShaders();
+
+        void SetCamera();
 
         void Draw();
 

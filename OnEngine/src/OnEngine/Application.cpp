@@ -29,7 +29,9 @@ namespace on
     void Application::Run()
     {
         m_Render.Init();
-        m_Render.Setup();
+        m_Render.CompileShaders();
+        m_Render.SetCamera();
+       
 
         while (m_Running)
         {
