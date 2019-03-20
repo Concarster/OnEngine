@@ -5,6 +5,9 @@ namespace on
 {
 
     Objects::Objects()
+       /* :m_Size(200),
+        m_Width(900),
+        m_Height(600)*/
     {
     }
 

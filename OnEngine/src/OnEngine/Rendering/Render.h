@@ -25,7 +25,19 @@ namespace on
 
         void CleanUp();
 
+        /*Terrain Test*/
+        int GetVerticesCount(int sWidth, int sHeight);
+
+        int GetIndicesCount(int sWidth, int sHeight);
+
+        float* GetVertices(int sWidth, int sHeight);
+
+        int* GetIndices(int sWidth, int sHeight);
+
     private:
+        void Test();
+        void Test2();
+
         void Triangles();
 
         void TwoTriangles();
@@ -45,6 +57,8 @@ namespace on
         void CubeColor();
 
         void CubeFloat();
+
+        void Terrain();
     };
 
 }

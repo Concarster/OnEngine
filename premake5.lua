@@ -29,12 +29,14 @@ IncludeDir["GLFW"]  = "OnEngine/Deps/GLFW/include"
 IncludeDir["Glad"]  = "OnEngine/Deps/Glad/include"
 IncludeDir["ImGui"] = "OnEngine/Deps/imgui"
 IncludeDir["glm"]   = "OnEngine/Deps/glm"
+IncludeDir["SOIL2"]   = "OnEngine/Deps/SOIL2/incs"
 
 group "Dependencies"
 
 include "OnEngine/Deps/GLFW"
 include "OnEngine/Deps/Glad"
 include "OnEngine/Deps/imgui"
+include "OnEngine/Deps/SOIL2"
 --include "OnEngine/Deps/glm"
 
  group ""
@@ -64,6 +66,7 @@ project "OnEngine"
         "%{IncludeDir.GLFW}",
         "%{IncludeDir.Glad}",
         "%{IncludeDir.ImGui}",
+        "%{IncludeDir.SOIL2}",
         "%{IncludeDir.glm}"
     }
 
@@ -71,6 +74,7 @@ project "OnEngine"
 		"GLFW",
 		"Glad",
 		"ImGui",
+        "SOIL2";
 		"opengl32.lib"
 	}
 
@@ -133,13 +137,18 @@ project "App"
     includedirs {
         "Onengine/Deps/spdlog/include",
         "Onengine/src",
+        "%{IncludeDir.GLFW}",
         "%{IncludeDir.Glad}",
+        "%{IncludeDir.ImGui}",
         "%{IncludeDir.glm}"
     }
 
     links {
         "OnEngine",
-        "Glad"
+        "GLFW",
+		"Glad",
+		"ImGui",
+		"opengl32.lib"
     }
 
     filter"system:windows"

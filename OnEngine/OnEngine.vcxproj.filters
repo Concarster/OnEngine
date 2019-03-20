@@ -4,6 +4,9 @@
     <Filter Include="OnEngine">
       <UniqueIdentifier>{78D97E20-64A6-D92B-8DBF-C7D379EB0EBA}</UniqueIdentifier>
     </Filter>
+    <Filter Include="OnEngine\Drawing">
+      <UniqueIdentifier>{F37835B8-DF71-540A-08A4-398FF4FB3316}</UniqueIdentifier>
+    </Filter>
     <Filter Include="OnEngine\Events">
       <UniqueIdentifier>{5C2E823E-C8B9-EF02-D1CA-72F73DD54B03}</UniqueIdentifier>
     </Filter>

@@ -38,6 +38,13 @@ namespace on
         //GLuint MatrixID;
         unsigned int m_MatrixID;
 
+        int m_Size = 100;
+        int m_Width = 400;
+        int m_Height = 400;
+        float* m_Vertices = 0;
+        int* m_Indices = 0;
+
+
     public:
         Objects();
         ~Objects();

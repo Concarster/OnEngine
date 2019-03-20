@@ -27,12 +27,29 @@ namespace on
         glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
         glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE); // To make MacOS happy; should not be needed
         glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE); // We don't want the old OpenGL 
+
+        /*OpenGL Options*/
+        /*If GL_BLEND is enabled; check the rendering order of your objects*/
+        glEnable(GL_BLEND);
+
+        /*If GL_DEPTH_TEST is enabled; then check the planes to your frustum against your model view projection matrix along with the camera's position & view direction.*/
+        glEnable(GL_DEPTH);
+        glEnable(GL_DEPTH_TEST);
+
+        /*If you have GL_CULL_FACE enabled check the winding order of your model's vertices. (LH) vs (RH).*/
+        glEnable(GL_CULL_FACE);
+
+        glCullFace(GL_BACK);         ///<<<--Back of the triangle obj
+        glFrontFace(GL_CCW);         ///<<<--Counter Clock Wide
+        
     }
 
     void Render::CompileShaders()
     {
         // Create and compile our GLSL program from the shaders
-        m_ProgramID = m_Shader.Load("Assets/Shaders/VertexShaderColored.vert", "Assets/Shaders/FragmentShaderColored.frag");
+        //m_ProgramID = m_Shader.Load("Assets/Shaders/VertexShader.vert", "Assets/Shaders/FragmentShader.frag");
+        m_ProgramID = m_Shader.Load("Assets/Shaders/VertexShader_GLM.vert", "Assets/Shaders/FragmentShader_GLM.frag");
+        //m_ProgramID = m_Shader.Load("Assets/Shaders/VertexShaderColored.vert", "Assets/Shaders/FragmentShaderColored.frag");
 
         // Get a handle for our "MVP" uniform
         m_MatrixID = glGetUniformLocation(m_ProgramID, "MVP");
@@ -57,11 +74,18 @@ namespace on
         //glm::mat4 Projection = glm::ortho(-10.0f,10.0f,-10.0f,10.0f,0.0f,100.0f); // In world coordinates
 
         // Camera matrix
-        glm::mat4 View = glm::lookAt(
-                                      glm::vec3(12, 8, 8),       // Camera is at (4,3,3), in World Space
-                                      glm::vec3(0, 0, 0),          // and looks at the origin
+        glm::mat4 View;
+                  View = glm::lookAt(
+                                      glm::vec3(0, 4, 2),          // Camera is at (4,3,3), in World Space
+                                      glm::vec3(0, 0, 0),          // and looks at the origin (0.0.0) 3D Center of the screen
                                       glm::vec3(0, 1, 0)           // Head is up (set to 0,-1,0 to look upside-down)
                                       );
+
+
+        
+                 /* View = glm::lookAt(glm::vec3(0, 4, 2),
+                                     glm::vec3(0, 0, 0),
+                                     glm::vec3(0, 1, 0));*/
 
         // Model matrix : an identity matrix (model will be at the origin)
         glm::mat4 Model = glm::mat4(1.0f);
@@ -92,8 +116,11 @@ namespace on
 
         //Triangles();
         //Cube();
-        CubeColor();
-
+        //CubeColor();
+        //Terrain(); Not ready yet
+        
+        //Test();
+        Test2();
     }
 
     void Render::CleanUp()
@@ -103,6 +130,117 @@ namespace on
         glDeleteBuffers(1, &m_CBO);
         glDeleteVertexArrays(1, &m_VAO);
         glDeleteProgram(m_ProgramID);
+    }
+
+    int Render::GetVerticesCount(int width, int height)
+    {
+        return m_Width * m_Height * 3;
+    }
+
+    int Render::GetIndicesCount(int sWidth, int sHeight)
+    {
+        return (m_Width * m_Height) + (m_Width - 1) * (m_Height - 2);
+    }
+
+    float * Render::GetVertices(int sWidth, int sHeight)
+    {
+        if (m_Vertices) return m_Vertices;
+
+        m_Vertices = new float[GetVerticesCount(m_Width, m_Height)];
+        int i = 0;
+
+        for (int row = 0; row < m_Height; row++) {
+            for (int col = 0; col < m_Width; col++) {
+                m_Vertices[i++] = (float)col;
+                m_Vertices[i++] = 0.0f;
+                m_Vertices[i++] = (float)row;
+            }
+        }
+
+       return m_Vertices;
+    }
+
+    int * Render::GetIndices(int sWidth, int sHeight)
+    {
+        if (m_Indices) return m_Indices;
+
+        m_Indices = new int[m_Size];
+        int i = 0;
+
+        for (int row = 0; row < m_Height - 1; row++) {
+            if ((row & 1) == 0) { // even rows
+                for (int col = 0; col < m_Width; col++) {
+                    m_Indices[i++] = col + row * m_Width;
+                    m_Indices[i++] = col + (row + 1) * m_Width;
+                }
+            }
+            else { // odd rows
+                for (int col = m_Width - 1; col > 0; col--) {
+                    m_Indices[i++] = col + (row + 1) * m_Width;
+                    m_Indices[i++] = col - 1 + +row * m_Width;
+                }
+            }
+        }
+        if ((m_Height & 1) && m_Height > 2) {
+            m_Indices[i++] = (m_Height - 1) * m_Width;
+        }
+
+        return m_Indices;
+    }
+
+    void Render::Test()
+    {
+        glGenVertexArrays(1, &m_VAO);
+        glBindVertexArray(m_VAO);
+
+        // An array of 3 vectors which represents 3 vertices
+        static const GLfloat g_vertex_buffer_data[] = {
+           -0.5f, -0.5f, 0.0f,
+            0.0f,  0.5f, 0.0f,
+            0.5f, -0.5f, 0.0f,
+        };
+
+
+
+        // Generate 1 buffer, put the resulting identifier in vertexbuffer
+        glGenBuffers(1, &m_VBO);
+
+        // The following commands will talk about our 'vertexbuffer' buffer
+        glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
+
+        // Give our vertices to OpenGL.
+        glBufferData(GL_ARRAY_BUFFER, sizeof(g_vertex_buffer_data), g_vertex_buffer_data, GL_STATIC_DRAW);
+
+        // 1st attribute buffer : vertices
+        glEnableVertexAttribArray(0);
+
+        glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
+
+        glVertexAttribPointer(
+            0,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
+            3,                  // size
+            GL_FLOAT,           // type
+            GL_FALSE,           // normalized?
+            0,                  // stride
+            (void*)0            // array buffer offset
+        );
+
+        // Draw the triangle !
+        glDrawArrays(GL_TRIANGLES, 0, 3); // Starting from vertex 0; 3 vertices total -> 1 triangle
+        glDisableVertexAttribArray(0);
+       
+    }
+
+    void Render::Test2()
+    {
+        glBegin(GL_TRIANGLE_STRIP);
+        glVertex3f(0.2f, 0.2f, 0.0f);
+        glVertex3f(0.8f, 0.2f, 0.0f);
+        glVertex3f(0.2f, 0.5f, 0.0f);
+        glVertex3f(0.8f, 0.5f, 0.0f);
+        glVertex3f(0.2f, 0.8f, 0.0f);
+        glVertex3f(0.8f, 0.8f, 0.0f);
+        glEnd();
     }
 
     void Render::Triangles()
@@ -417,6 +555,15 @@ namespace on
 
     void Render::CubeFloat()
     {
+    }
+
+    void Render::Terrain()
+    {
+            glEnableClientState(GL_VERTEX_ARRAY);
+            glVertexPointer(3, GL_FLOAT, 0, GetVertices(m_Width, m_Height));
+            glDrawElements(GL_TRIANGLE_STRIP, GetIndicesCount(m_Width, m_Height), GL_UNSIGNED_INT, GetIndices(m_Width, m_Height));
+            glDisableClientState(GL_VERTEX_ARRAY);
+       
     }
 
 }

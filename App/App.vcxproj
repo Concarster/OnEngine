@@ -140,7 +140,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DisableSpecificWarnings>4996;4251;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions>ON_ENGINE;ON_WINDOW;ON_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Onengine\Deps\spdlog\include;..\Onengine\src;..\OnEngine\Deps\Glad\include;..\OnEngine\Deps\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Onengine\Deps\spdlog\include;..\Onengine\src;..\OnEngine\Deps\GLFW\include;..\OnEngine\Deps\Glad\include;..\OnEngine\Deps\imgui;..\OnEngine\Deps\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -150,6 +150,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -158,7 +159,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DisableSpecificWarnings>4996;4251;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions>ON_ENGINE;ON_WINDOW;ON_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Onengine\Deps\spdlog\include;..\Onengine\src;..\OnEngine\Deps\Glad\include;..\OnEngine\Deps\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Onengine\Deps\spdlog\include;..\Onengine\src;..\OnEngine\Deps\GLFW\include;..\OnEngine\Deps\Glad\include;..\OnEngine\Deps\imgui;..\OnEngine\Deps\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -168,6 +169,7 @@
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release Win32|x64'">
@@ -176,7 +178,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DisableSpecificWarnings>4996;4251;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions>ON_ENGINE;ON_WINDOW;ON_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Onengine\Deps\spdlog\include;..\Onengine\src;..\OnEngine\Deps\Glad\include;..\OnEngine\Deps\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Onengine\Deps\spdlog\include;..\Onengine\src;..\OnEngine\Deps\GLFW\include;..\OnEngine\Deps\Glad\include;..\OnEngine\Deps\imgui;..\OnEngine\Deps\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -190,6 +192,7 @@
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -198,7 +201,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DisableSpecificWarnings>4996;4251;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions>ON_ENGINE;ON_WINDOW;ON_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Onengine\Deps\spdlog\include;..\Onengine\src;..\OnEngine\Deps\Glad\include;..\OnEngine\Deps\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Onengine\Deps\spdlog\include;..\Onengine\src;..\OnEngine\Deps\GLFW\include;..\OnEngine\Deps\Glad\include;..\OnEngine\Deps\imgui;..\OnEngine\Deps\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -212,6 +215,7 @@
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist Win32|x64'">
@@ -220,7 +224,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DisableSpecificWarnings>4996;4251;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions>ON_ENGINE;ON_WINDOW;ON_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Onengine\Deps\spdlog\include;..\Onengine\src;..\OnEngine\Deps\Glad\include;..\OnEngine\Deps\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Onengine\Deps\spdlog\include;..\Onengine\src;..\OnEngine\Deps\GLFW\include;..\OnEngine\Deps\Glad\include;..\OnEngine\Deps\imgui;..\OnEngine\Deps\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -234,6 +238,7 @@
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
@@ -242,7 +247,7 @@
       <WarningLevel>Level3</WarningLevel>
       <DisableSpecificWarnings>4996;4251;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <PreprocessorDefinitions>ON_ENGINE;ON_WINDOW;ON_DIST;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Onengine\Deps\spdlog\include;..\Onengine\src;..\OnEngine\Deps\Glad\include;..\OnEngine\Deps\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Onengine\Deps\spdlog\include;..\Onengine\src;..\OnEngine\Deps\GLFW\include;..\OnEngine\Deps\Glad\include;..\OnEngine\Deps\imgui;..\OnEngine\Deps\glm;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -256,6 +261,7 @@
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -265,8 +271,14 @@
     <ProjectReference Include="..\OnEngine\OnEngine.vcxproj">
       <Project>{78D97E20-64A6-D92B-8DBF-C7D379EB0EBA}</Project>
     </ProjectReference>
+    <ProjectReference Include="..\OnEngine\Deps\GLFW\GLFW.vcxproj">
+      <Project>{154B857C-0182-860D-AA6E-6C109684020F}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\OnEngine\Deps\Glad\Glad.vcxproj">
       <Project>{BDD6857C-A90D-870D-52FA-6C103E10030F}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\OnEngine\Deps\imgui\ImGui.vcxproj">
+      <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

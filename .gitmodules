@@ -10,3 +10,7 @@
 [submodule "OnEngine/Deps/glm"]
 	path = OnEngine/Deps/glm
 	url = https://github.com/g-truc/glm
+[submodule "OnEngine/Deps/SOIL2"]
+	path = OnEngine/Deps/SOIL2
+	url = https://github.com/alelievr/SOIL2
+
