@@ -295,7 +295,15 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="MainCtrl.h" />
+    <ClInclude Include="src\OnEngine\Util\Shader.h" />
+    <ClInclude Include="src\OnEngine\Drawing\Quad.h" />
+    <ClInclude Include="src\OnEngine\Drawing\ShaderMgr.h" />
+    <ClInclude Include="src\OnEngine\Drawing\Material.h" />
     <ClInclude Include="src\OnEngine\Application.h" />
+    <ClInclude Include="src\OnEngine\Drawing\Primitive.h" />
+    <ClInclude Include="src\OnEngine\Drawing\Texture.h" />
+    <ClInclude Include="src\OnEngine\Drawing\Vertex.h" />
     <ClInclude Include="src\OnEngine\EntryPoint.h" />
     <ClInclude Include="src\OnEngine\Events\ApplicationEvent.h" />
     <ClInclude Include="src\OnEngine\Events\Event.h" />
@@ -320,9 +328,17 @@
     <ClInclude Include="src\OnEngine\Util\OnINC.h" />
     <ClInclude Include="src\OnEngine\Window.h" />
     <ClInclude Include="src\OnPCH.h" />
+    <ClInclude Include="src\OnEngine\Drawing\Triangle.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="MainCtrl.cpp" />
+    <ClCompile Include="src\OnEngine\Util\Shader.cpp" />
+    <ClCompile Include="src\OnEngine\Drawing\Quad.cpp" />
+    <ClCompile Include="src\OnEngine\Drawing\ShaderMgr.cpp" />
+    <ClCompile Include="src\OnEngine\Drawing\Material.cpp" />
     <ClCompile Include="src\OnEngine\Application.cpp" />
+    <ClCompile Include="src\OnEngine\Drawing\Primitive.cpp" />
+    <ClCompile Include="src\OnEngine\Drawing\Texture.cpp" />
     <ClCompile Include="src\OnEngine\ImGui\ImGuiLayer.cpp" />
     <ClCompile Include="src\OnEngine\Layers\Layer.cpp" />
     <ClCompile Include="src\OnEngine\Layers\LayerSatck.cpp" />
@@ -339,6 +355,7 @@
     <ClCompile Include="src\OnPCH.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\OnEngine\Drawing\Triangle.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Deps\GLFW\GLFW.vcxproj">

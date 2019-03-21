@@ -115,6 +115,15 @@
       <Filter>OnEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\OnPCH.h" />
+    <ClInclude Include="src\OnEngine\Drawing\Primitive.h" />
+    <ClInclude Include="src\OnEngine\Drawing\Texture.h" />
+    <ClInclude Include="src\OnEngine\Drawing\Vertex.h" />
+    <ClInclude Include="src\OnEngine\Drawing\Material.h" />
+    <ClInclude Include="src\OnEngine\Drawing\ShaderMgr.h" />
+    <ClInclude Include="src\OnEngine\Drawing\Quad.h" />
+    <ClInclude Include="src\OnEngine\Drawing\Triangle.h" />
+    <ClInclude Include="src\OnEngine\Util\Shader.h" />
+    <ClInclude Include="MainCtrl.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\OnEngine\Application.cpp">
@@ -160,5 +169,13 @@
       <Filter>OnEngine\Util</Filter>
     </ClCompile>
     <ClCompile Include="src\OnPCH.cpp" />
+    <ClCompile Include="src\OnEngine\Drawing\Primitive.cpp" />
+    <ClCompile Include="src\OnEngine\Drawing\Texture.cpp" />
+    <ClCompile Include="src\OnEngine\Drawing\Material.cpp" />
+    <ClCompile Include="src\OnEngine\Drawing\ShaderMgr.cpp" />
+    <ClCompile Include="src\OnEngine\Drawing\Quad.cpp" />
+    <ClCompile Include="src\OnEngine\Drawing\Triangle.cpp" />
+    <ClCompile Include="src\OnEngine\Util\Shader.cpp" />
+    <ClCompile Include="MainCtrl.cpp" />
   </ItemGroup>
 </Project>

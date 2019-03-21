@@ -8,6 +8,10 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
+#include "OnEngine\Drawing\Primitive.h"
+#include "OnEngine\Drawing\Triangle.h"
+#include "OnEngine\\Drawing\Quad.h"
+
 namespace on
 {
 
@@ -41,18 +45,69 @@ namespace on
 
         glCullFace(GL_BACK);         ///<<<--Back of the triangle obj
         glFrontFace(GL_CCW);         ///<<<--Counter Clock Wide
+
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+
+        glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
         
+    }
+
+    void Render::InitPrimitiveVAO(Primitive * primitive)
+    {
+    }
+
+    void Render::InitVAO(Primitive * primitive)
+    {
+       
+
+        glGenVertexArrays(1, &m_VAO);
+        glBindVertexArray(m_VAO);
+
+       
+
+        // Generate 1 buffer, put the resulting identifier in vertexbuffer
+        glGenBuffers(1, &m_VBO);
+
+        // The following commands will talk about our 'vertexbuffer' buffer
+        glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
+
+        // Give our vertices to OpenGL.
+        glBufferData(GL_ARRAY_BUFFER, primitive->GetNumOfVertices() * sizeof Vertex, primitive->GetVertices(), GL_STATIC_DRAW);
+
+        // 1st attribute buffer : vertices
+        glEnableVertexAttribArray(0);
+
+        glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
+
+        glVertexAttribPointer(
+            0,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
+            primitive->GetNumOfVertices() * sizeof Vertex,                  // size
+            GL_FLOAT,           // type
+            GL_FALSE,           // normalized?
+            0,                  // stride
+            (void*)0            // array buffer offset
+        );
+
+        // Draw the triangle !
+        glDrawArrays(GL_TRIANGLES, 0, primitive->GetNumOfVertices() * sizeof Vertex); // Starting from vertex 0; 3 vertices total -> 1 triangle
+        glDisableVertexAttribArray(0);
     }
 
     void Render::CompileShaders()
     {
+        //SHADER INIT
+        //core_program.Init("Assets/Shaders/VertexShaderColored.vert", "Assets/Shaders/FragmentShaderColored.frag");
         // Create and compile our GLSL program from the shaders
         //m_ProgramID = m_Shader.Load("Assets/Shaders/VertexShader.vert", "Assets/Shaders/FragmentShader.frag");
-        m_ProgramID = m_Shader.Load("Assets/Shaders/VertexShader_GLM.vert", "Assets/Shaders/FragmentShader_GLM.frag");
+        //m_ProgramID = m_Shader.Load("Assets/Shaders/Vertex.vert", "Assets/Shaders/Fragment.frag");
         //m_ProgramID = m_Shader.Load("Assets/Shaders/VertexShaderColored.vert", "Assets/Shaders/FragmentShaderColored.frag");
 
         // Get a handle for our "MVP" uniform
         m_MatrixID = glGetUniformLocation(m_ProgramID, "MVP");
+
+        // Get a handle for our "MVP" uniform
+        //m_MatrixID = glGetUniformLocation(m_ProgramID, "MVP");
     }
 
     void Render::SetCamera()
@@ -76,7 +131,7 @@ namespace on
         // Camera matrix
         glm::mat4 View;
                   View = glm::lookAt(
-                                      glm::vec3(0, 4, 2),          // Camera is at (4,3,3), in World Space
+                                      glm::vec3(4, 3, 3),          // Camera is at (4,3,3), in World Space (0, 4, 2)
                                       glm::vec3(0, 0, 0),          // and looks at the origin (0.0.0) 3D Center of the screen
                                       glm::vec3(0, 1, 0)           // Head is up (set to 0,-1,0 to look upside-down)
                                       );
@@ -95,6 +150,7 @@ namespace on
 
         // Use our shader
         glUseProgram(m_ProgramID);
+    
         //glUseProgram(m_Obj.GetProgramId());
 
         // Send our transformation to the currently bound shader, 
@@ -114,13 +170,10 @@ namespace on
         // Clear the screen
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        //Triangles();
-        //Cube();
-        //CubeColor();
-        //Terrain(); Not ready yet
+       
         
-        //Test();
-        Test2();
+        Triangles();
+      
     }
 
     void Render::CleanUp()
@@ -243,6 +296,15 @@ namespace on
         glEnd();
     }
 
+    void Render::DQuad()
+    {
+        Quad quad;
+        std::cout << quad.GetVertices() << std::endl;
+        std::cout << quad.GetNumOfVertices() << std::endl;
+        std::cout << quad.GetIndices() << std::endl;
+        std::cout << quad.GetNumOfIndices() << std::endl;
+    }
+
     void Render::Triangles()
     {
         glGenVertexArrays(1, &m_VAO);
@@ -283,6 +345,206 @@ namespace on
         // Draw the triangle !
         glDrawArrays(GL_TRIANGLES, 0, 3); // Starting from vertex 0; 3 vertices total -> 1 triangle
         glDisableVertexAttribArray(0);
+    }
+
+    void Render::TriangleOne()
+    {
+        //VertexPosition verticesPos[] =
+        //{
+        //    /* Position */                       /* Color */                         /* Texcoords */               /* Normals */
+        //    glm::vec3(0.0f,  0.5f, 0.0f),     glm::vec3(1.0f, 0.5f, 0.0f),      //glm::vec2(0.5f, 1.0f),      //glm::vec3( 0.0f, 0.0f, 1.0f),
+        //    glm::vec3(-0.5f, -0.5f, 0.0f),    glm::vec3(0.0f, 1.0f, 0.0f),      //glm::vec2(0.0f, 0.0f),      //glm::vec3( 0.0f, 0.0f, 1.0f),
+        //    glm::vec3(0.0f, -0.5f, 0.0f),     glm::vec3(0.0f, 0.5f, 1.0f),      //glm::vec2(1.0f, 0.0f)      //glm::vec3( 0.0f, 0.0f, 1.0f)
+        //};
+
+
+
+        Vertex3A vertices[] =
+        {
+            /* Position */                       /* Color */                         /* Texcoords */               /* Normals */
+            glm::vec3(  0.0f,  0.5f, 0.0f ),     glm::vec3( 1.0f, 0.5f, 0.0f ),      glm::vec2( 0.5f, 1.0f ),      //glm::vec3( 0.0f, 0.0f, 1.0f),
+            glm::vec3( -0.5f, -0.5f, 0.0f ),     glm::vec3( 0.0f, 1.0f, 0.0f ),      glm::vec2( 0.0f, 0.0f ),      //glm::vec3( 0.0f, 0.0f, 1.0f),
+            glm::vec3(  0.0f, -0.5f, 0.0f ),     glm::vec3( 0.0f, 0.5f, 1.0f ),      glm::vec2( 1.0f, 0.0f )      //glm::vec3( 0.0f, 0.0f, 1.0f)
+        };
+
+        unsigned numbOfVertices = sizeof(vertices) / sizeof(Vertex3A);
+
+        GLuint indices[] =
+        {
+            0, 1, 2
+        };
+
+        unsigned numbOfIndices = sizeof(indices) / sizeof(GLuint);
+
+        //Meshes Objs 3ds, max, c4d, maya, blend, fbx
+        /*MODEL*/
+
+
+
+
+        //Load a vertex buffer into OpenGL for later rendering.
+        //Vertex Array Obj, Vertex Buffer Obj, Element Buffer Obj
+        /*VAO VBO EBO*/ 
+        GLuint VAO;
+        GLuint VBO;
+        GLuint EBO;
+
+        //Create vertex array object names, Bind a vertex array object
+        /*CREATE  VAO AND BIND*/
+        glCreateVertexArrays(1, &VAO);            //http://docs.gl/gl4/glCreateVertexArrays.
+        glBindVertexArray(VAO);                   //http://docs.gl/gl4/glBindVertexArray
+
+
+
+        //Generate buffer object names
+        /*GENERATE  BVO, BIND AND SEND DATA*/
+        glGenBuffers(1, &VBO);                                                           //http://docs.gl/gl4/glGenBuffers
+        glBindBuffer(GL_ARRAY_BUFFER, VBO);                                              //http://docs.gl/gl4/glBindBuffer
+        glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);       //http://docs.gl/gl4/glBufferData
+
+
+
+        //Generate element buffer object names
+        /*GENERATE  EVO, BIND AND SEND DATA*/
+        glGenBuffers(1, &EBO);
+        glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+        glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+
+
+
+        //
+        
+        /*SET VERTEX ATTRIB POINTERS AND ENABLE*/
+        //GLuint v_AtrribLocation = glGetAttribLocation(m_ProgramID, "v_Position");
+        
+        //glVertexAttribPointer();                                      //http://docs.gl/gl4/glVertexAttribPointer
+        /*POSITION*/
+        glVertexAttribPointer( 0 ,                                      /*Index where is start*/ 
+                               3 ,                                      /*Size of the vertex components*/
+                               GL_FLOAT,                                /*What type of obj*/
+                               GL_FALSE,                                /*Normalized Yes or No*/
+                               sizeof(Vertex3A),                          /*How many bytes betwen each vertex attrib*/
+                               (GLvoid*)offsetof(Vertex3A, v_Position));  /*Specifies a offset of the first component*/
+        
+                //glEnableVertexAttribArray(v_AtrribLocation);
+        glEnableVertexAttribArray(0);
+
+        /*COLOR*/
+        glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex3A), (GLvoid*)offsetof(Vertex3A, v_Color));
+        glEnableVertexAttribArray(1);
+
+        /*TEXT COORD*/
+        glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex3A), (GLvoid*)offsetof(Vertex3A, v_TexCoord));
+        glEnableVertexAttribArray(2);
+
+        /*BIND VAO 0*/
+        glBindVertexArray(0);
+
+        /*USE SHADER PROGRAM*/
+        glUseProgram(m_ProgramID);
+
+        /*BIND the already created obj VAO*/
+        glBindVertexArray(m_VAO);
+
+        /*DRAW THE OBJ*/
+        glDrawArrays(GL_TRIANGLES, 0, numbOfVertices);
+
+        //glDrawElements(GL_TRIANGLES, numbOfIndices, GL_UNSIGNED_INT, 0);
+        // glBindVertexArray(0); // no need to unbind it every time 
+    }
+
+    void Render::TriangleTwo()
+    {
+        //MODEL
+        Vertex vertices[] =
+        {
+            /* Position */                       /* Color */                         /* Texcoords */               /* Normals */
+            glm::vec3(0.0f,  0.5f, 0.0f),     glm::vec3(1.0f, 0.5f, 0.0f),      glm::vec2(0.5f, 1.0f),      //glm::vec3( 0.0f, 0.0f, 1.0f),
+            glm::vec3(-0.5f, -0.5f, 0.0f),     glm::vec3(0.0f, 1.0f, 0.0f),      glm::vec2(0.0f, 0.0f),      //glm::vec3( 0.0f, 0.0f, 1.0f),
+            glm::vec3(0.0f, -0.5f, 0.0f),     glm::vec3(0.0f, 0.5f, 1.0f),      glm::vec2(1.0f, 0.0f)      //glm::vec3( 0.0f, 0.0f, 1.0f)
+        };
+
+        unsigned numbOfVertices = sizeof(vertices) / sizeof(Vertex3A);
+
+        GLuint indices[] =
+        {
+            0, 1, 2
+        };
+
+        numbOfIndices = sizeof(indices) / sizeof(GLuint);
+
+
+    //VAO, VBO, EBO
+    //GEN VAO AND BIND
+        //GLuint VAO;
+        //glCreateVertexArrays(1, &VAO);
+        //glBindVertexArray(VAO);
+  
+        ////GEN VBO AND BIND AND SEND DATA
+        //GLuint VBO;
+        //glGenBuffers(1, &VBO);
+        //glBindBuffer(GL_ARRAY_BUFFER, VBO);
+        //glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+
+        ////GEN EBO AND BIND AND SEND DATA
+        //GLuint EBO;
+        //glGenBuffers(1, &EBO);
+        //glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+        //glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+
+        ////SET VERTEXATTRIBPOINTERS AND ENABLE (INPUT ASSEMBLY)
+        ////Position
+        //glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid*)offsetof(Vertex, v_Position));
+        //glEnableVertexAttribArray(0);
+        ////Color
+        //glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid*)offsetof(Vertex, v_Color));
+        //glEnableVertexAttribArray(1);
+        ////Texcoord
+        //glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid*)offsetof(Vertex, v_TexCoord));
+        //glEnableVertexAttribArray(2);
+        ////Normal
+        ///*glVertexAttribPointer(3, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (GLvoid*)offsetof(Vertex, normal));
+        //glEnableVertexAttribArray(3);*/
+
+        ////BIND VAO 0
+        //glBindVertexArray(0);
+    }
+
+    void Render::PrimitiveTriangles()
+    {
+        //Triangle primitive;
+
+        //glGenVertexArrays(1, &m_VAO);
+        //glBindVertexArray(m_VAO);
+
+
+
+        //// Generate 1 buffer, put the resulting identifier in vertexbuffer
+        //glGenBuffers(1, &m_VBO);
+
+        //// The following commands will talk about our 'vertexbuffer' buffer
+        //glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
+
+        //// Give our vertices to OpenGL.
+        //glBufferData(GL_ARRAY_BUFFER, primitive.GetNumOfVertices() * sizeof Vertex, primitive.GetVertices(), GL_STATIC_DRAW);
+
+        //// 1st attribute buffer : vertices
+        //glEnableVertexAttribArray(0);
+
+        //glBindBuffer(GL_ARRAY_BUFFER, m_VBO);
+
+        //glVertexAttribPointer(
+        //    0,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
+        //    primitive.GetNumOfVertices() * sizeof Vertex,                  // size
+        //    GL_FLOAT,           // type
+        //    GL_FALSE,           // normalized?
+        //    0,                  // stride
+        //    (void*)0            // array buffer offset
+        //);
+
+        // Draw the triangle !
+        //glDrawArrays(GL_TRIANGLES, 0, 3); // Starting from vertex 0; 3 vertices total -> 1 triangle
+        //glDisableVertexAttribArray(0);
     }
 
 

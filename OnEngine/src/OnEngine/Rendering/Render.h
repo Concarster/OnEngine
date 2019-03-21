@@ -1,6 +1,8 @@
 #pragma once
 #include "OnEngine/Util/Defs.h"
 #include "OnEngine\Objs\Objects.h"
+#include "OnEngine\Drawing\Primitive.h"
+
 
 namespace on
 {
@@ -16,6 +18,11 @@ namespace on
         ~Render();
 
         void Init();
+
+        void InitPrimitiveVAO(Primitive* primitive);
+
+        void InitVAO(Primitive * primitive);
+
 
         void CompileShaders();
 
@@ -34,11 +41,21 @@ namespace on
 
         int* GetIndices(int sWidth, int sHeight);
 
+        void TriangleTwo();
+
     private:
         void Test();
         void Test2();
 
+        void DQuad();
+
         void Triangles();
+
+        void TriangleOne();
+
+        
+
+        void PrimitiveTriangles();
 
         void TwoTriangles();
 

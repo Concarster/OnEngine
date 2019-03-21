@@ -1,6 +1,8 @@
 #pragma once
 #include "OnEngine/Util/Defs.h"
 #include "OnEngine\Util\LoadShaders.h"
+#include "OnEngine\Drawing\ShaderMgr.h"
+#include "OnEngine\Util\Shader.h"
 
 namespace on
 {
@@ -13,13 +15,19 @@ namespace on
     protected:
         /*The LoadShaders Obj*/
         LoadShaders m_Shader;
+        ShaderMgr* m_ShaderMgr;
+
+        Shader core_program;
+        unsigned numbOfIndices;
 
         /*This will identify our GLSL Program Shaders*/
         //GLuint m_ProgramID;
         unsigned int m_ProgramID;
+        unsigned int m_ProgShrID;
 
         /*This will identify our Vertex Array Object*/
         //GLuint m_VAO;
+        GLuint VAO;
         unsigned int m_VAO;
 
         /*This will identify our Vertex Buffer Object*/
