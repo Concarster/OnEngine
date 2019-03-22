@@ -38,4 +38,18 @@ namespace on
         glm::vec3 v_VPosition;
     };
 
+    struct VertexColor
+    {
+        glm::vec3 v_VColor;
+    };
+
+    struct VertexTextCoord
+    {
+        glm::vec2 v_VTextCoord;
+    };
+
+    struct VertexNormal
+    {
+        glm::vec3 v_VNormal;
+    };
 }

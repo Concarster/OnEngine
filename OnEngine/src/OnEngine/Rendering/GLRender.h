@@ -33,6 +33,9 @@ namespace on
         void RenderGlmTriangle(GLuint & program, GLuint& vao, GLuint& vbo, GLuint& ebo);
         void RenderATriangle(GLuint & program, unsigned int& VAO, unsigned int& VBO);
         void RenderATriangle(GLuint & program, unsigned int& VAO, unsigned int& VBO, unsigned int& EBO);
+        void RenderASquare(GLuint & program, unsigned int& VAO, unsigned int& VBO, unsigned int& EBO);
+        void RenderASquareWithOutDuplicate(GLuint & program, unsigned int& VAO, unsigned int& VBO, unsigned int& EBO);
+       
         void RenderATriangleDNT(GLuint & program, unsigned int& VAO, unsigned int& VBO, unsigned int& EBO);
     };
 

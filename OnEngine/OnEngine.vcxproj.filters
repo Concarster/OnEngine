@@ -45,6 +45,27 @@
     <ClInclude Include="src\OnEngine\Application.h">
       <Filter>OnEngine</Filter>
     </ClInclude>
+    <ClInclude Include="src\OnEngine\Drawing\Material.h">
+      <Filter>OnEngine\Drawing</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OnEngine\Drawing\Primitive.h">
+      <Filter>OnEngine\Drawing</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OnEngine\Drawing\Quad.h">
+      <Filter>OnEngine\Drawing</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OnEngine\Drawing\ShaderMgr.h">
+      <Filter>OnEngine\Drawing</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OnEngine\Drawing\Texture.h">
+      <Filter>OnEngine\Drawing</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OnEngine\Drawing\Triangle.h">
+      <Filter>OnEngine\Drawing</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OnEngine\Drawing\Vertex.h">
+      <Filter>OnEngine\Drawing</Filter>
+    </ClInclude>
     <ClInclude Include="src\OnEngine\EntryPoint.h">
       <Filter>OnEngine</Filter>
     </ClInclude>
@@ -66,6 +87,9 @@
     <ClInclude Include="src\OnEngine\ImGui\ImGuiLayer.h">
       <Filter>OnEngine\ImGui</Filter>
     </ClInclude>
+    <ClInclude Include="src\OnEngine\ImageMgr.h">
+      <Filter>OnEngine</Filter>
+    </ClInclude>
     <ClInclude Include="src\OnEngine\Layers\Layer.h">
       <Filter>OnEngine\Layers</Filter>
     </ClInclude>
@@ -73,6 +97,9 @@
       <Filter>OnEngine\Layers</Filter>
     </ClInclude>
     <ClInclude Include="src\OnEngine\Log.h">
+      <Filter>OnEngine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OnEngine\MainCtrl.h">
       <Filter>OnEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\OnEngine\Objs\Objects.h">
@@ -111,26 +138,41 @@
     <ClInclude Include="src\OnEngine\Util\OnINC.h">
       <Filter>OnEngine\Util</Filter>
     </ClInclude>
+    <ClInclude Include="src\OnEngine\Util\Shader.h">
+      <Filter>OnEngine\Util</Filter>
+    </ClInclude>
     <ClInclude Include="src\OnEngine\Window.h">
       <Filter>OnEngine</Filter>
     </ClInclude>
     <ClInclude Include="src\OnPCH.h" />
-    <ClInclude Include="src\OnEngine\Drawing\Primitive.h" />
-    <ClInclude Include="src\OnEngine\Drawing\Texture.h" />
-    <ClInclude Include="src\OnEngine\Drawing\Vertex.h" />
-    <ClInclude Include="src\OnEngine\Drawing\Material.h" />
-    <ClInclude Include="src\OnEngine\Drawing\ShaderMgr.h" />
-    <ClInclude Include="src\OnEngine\Drawing\Quad.h" />
-    <ClInclude Include="src\OnEngine\Drawing\Triangle.h" />
-    <ClInclude Include="src\OnEngine\Util\Shader.h" />
-    <ClInclude Include="MainCtrl.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\OnEngine\Application.cpp">
       <Filter>OnEngine</Filter>
     </ClCompile>
+    <ClCompile Include="src\OnEngine\Drawing\Material.cpp">
+      <Filter>OnEngine\Drawing</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OnEngine\Drawing\Primitive.cpp">
+      <Filter>OnEngine\Drawing</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OnEngine\Drawing\Quad.cpp">
+      <Filter>OnEngine\Drawing</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OnEngine\Drawing\ShaderMgr.cpp">
+      <Filter>OnEngine\Drawing</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OnEngine\Drawing\Texture.cpp">
+      <Filter>OnEngine\Drawing</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OnEngine\Drawing\Triangle.cpp">
+      <Filter>OnEngine\Drawing</Filter>
+    </ClCompile>
     <ClCompile Include="src\OnEngine\ImGui\ImGuiLayer.cpp">
       <Filter>OnEngine\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OnEngine\ImageMgr.cpp">
+      <Filter>OnEngine</Filter>
     </ClCompile>
     <ClCompile Include="src\OnEngine\Layers\Layer.cpp">
       <Filter>OnEngine\Layers</Filter>
@@ -139,6 +181,9 @@
       <Filter>OnEngine\Layers</Filter>
     </ClCompile>
     <ClCompile Include="src\OnEngine\Log.cpp">
+      <Filter>OnEngine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OnEngine\MainCtrl.cpp">
       <Filter>OnEngine</Filter>
     </ClCompile>
     <ClCompile Include="src\OnEngine\Objs\Objects.cpp">
@@ -168,14 +213,9 @@
     <ClCompile Include="src\OnEngine\Util\LoadShaders.cpp">
       <Filter>OnEngine\Util</Filter>
     </ClCompile>
+    <ClCompile Include="src\OnEngine\Util\Shader.cpp">
+      <Filter>OnEngine\Util</Filter>
+    </ClCompile>
     <ClCompile Include="src\OnPCH.cpp" />
-    <ClCompile Include="src\OnEngine\Drawing\Primitive.cpp" />
-    <ClCompile Include="src\OnEngine\Drawing\Texture.cpp" />
-    <ClCompile Include="src\OnEngine\Drawing\Material.cpp" />
-    <ClCompile Include="src\OnEngine\Drawing\ShaderMgr.cpp" />
-    <ClCompile Include="src\OnEngine\Drawing\Quad.cpp" />
-    <ClCompile Include="src\OnEngine\Drawing\Triangle.cpp" />
-    <ClCompile Include="src\OnEngine\Util\Shader.cpp" />
-    <ClCompile Include="MainCtrl.cpp" />
   </ItemGroup>
 </Project>

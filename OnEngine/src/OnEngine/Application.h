@@ -4,7 +4,7 @@
 #include "OnEngine\Layers\LayerSatck.h"
 #include "Events\Event.h"
 #include "Events\ApplicationEvent.h"
-#include "OnEngine\Rendering\Render.h"
+#include "OnEngine\MainCtrl.h"
 
 
 namespace on
@@ -19,7 +19,7 @@ namespace on
         bool m_Running = true;
         LayerSatck m_LayerStack;
        
-        Render m_Render;
+        MainCtrl m_Controller;
 
     public:
         Application();
@@ -36,11 +36,11 @@ namespace on
 
         /*Get a windows ptr*/
         inline Window& GetWindow() { return *m_Window; }
-
+        
     private:
         bool OnWindowClosed(WindowCloseEvent& event);
     };
-     
+   
     /*To Be defining in the client*/
     Application* CreateApplication();
 }

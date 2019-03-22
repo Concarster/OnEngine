@@ -21,6 +21,8 @@ void main(int argc, char** argv)
     auto Game = on::CreateApplication();
     Game->Run();
     delete Game;
+
+    _CrtDumpMemoryLeaks();
 }
 
 #endif // ON_WINDOW

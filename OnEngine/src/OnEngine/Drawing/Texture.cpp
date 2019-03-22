@@ -25,7 +25,6 @@ namespace on
         }
         else
         {
-            std::cout << "ERROR::TEXTURE::TEXTURE_LOADING_FAILED: " << fileName << "\n";
             ON_ENGINE_ERROR("ERROR::TEXTURE::TEXTURE_LOADING_FAILED: {0}", fileName);
         }
 
@@ -77,7 +76,6 @@ namespace on
         }
         else
         {
-            std::cout << "ERROR::TEXTURE::LOADFROMFILE::TEXTURE_LOADING_FAILED: " << fileName << "\n";
             ON_ENGINE_ERROR("ERROR::TEXTURE::TEXTURE_LOADING_FAILED: {0}", fileName);
         }
 

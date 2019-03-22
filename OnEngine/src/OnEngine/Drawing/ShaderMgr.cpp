@@ -111,7 +111,6 @@ namespace on
         }
         else
         {
-            std::cout << "ERROR::SHADER::COULD_NOT_OPEN_FILE: " << fileName << "\n";
             ON_ENGINE_ERROR("ERROR::SHADER::COULD_NOT_OPEN_FILE: {0}", fileName);
         }
 
@@ -144,10 +143,8 @@ namespace on
         {
             glGetShaderInfoLog(shader, 512, NULL, infoLog);
 
-            ON_ENGINE_ERROR("ERROR::SHADER::COULD_NOT_COMPILE_SHADER: {0}, {1}", fileName, infoLog);
-
-            std::cout << "ERROR::SHADER::COULD_NOT_COMPILE_SHADER: " << fileName << "\n";
-            std::cout << infoLog << "\n";
+            ON_ENGINE_ERROR("ERROR::SHADER::COULD_NOT_COMPILE_SHADER: {0} \n {1} \n", fileName, infoLog);
+           
         }
 
         return shader;
@@ -173,8 +170,8 @@ namespace on
         if (!success)
         {
             glGetProgramInfoLog(this->m_ID, 512, NULL, infoLog);
-            std::cout << "ERROR::SHADER::COULD_NOT_LINK_PROGRAM" << "\n";
-            std::cout << infoLog << "\n";
+            ON_ENGINE_ERROR("ERROR::SHADER::COULD_NOT_LINK_PROGRAM {0} \n", infoLog);
+           
         }
 
         glUseProgram(0);
@@ -190,7 +187,8 @@ namespace on
             if (!success)
             {
                 glGetShaderInfoLog(shader, 1024, NULL, infoLog);
-                std::cout << "ERROR::SHADER_COMPILATION_ERROR of type: " << type << "\n" << infoLog << "\n -- --------------------------------------------------- -- " << std::endl;
+               
+                ON_ENGINE_ERROR("ERROR::SHADER_COMPILATION_ERROR of type: {0} \n {1} \n", type, infoLog);
             }
         }
         else
@@ -199,7 +197,8 @@ namespace on
             if (!success)
             {
                 glGetProgramInfoLog(shader, 1024, NULL, infoLog);
-                std::cout << "ERROR::PROGRAM_LINKING_ERROR of type: " << type << "\n" << infoLog << "\n -- --------------------------------------------------- -- " << std::endl;
+                
+                ON_ENGINE_ERROR("ERROR::PROGRAM_LINKING_ERROR of type: {0} \n {1} \n", type, infoLog);
             }
         }
     }

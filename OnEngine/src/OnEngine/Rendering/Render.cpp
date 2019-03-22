@@ -82,7 +82,7 @@ namespace on
 
         glVertexAttribPointer(
             0,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
-            primitive->GetNumOfVertices() * sizeof Vertex,                  // size
+            (GLint)primitive->GetNumOfVertices() * sizeof Vertex,                  // size
             GL_FLOAT,           // type
             GL_FALSE,           // normalized?
             0,                  // stride
@@ -90,7 +90,7 @@ namespace on
         );
 
         // Draw the triangle !
-        glDrawArrays(GL_TRIANGLES, 0, primitive->GetNumOfVertices() * sizeof Vertex); // Starting from vertex 0; 3 vertices total -> 1 triangle
+        glDrawArrays(GL_TRIANGLES, 0, (GLsizei)primitive->GetNumOfVertices() * sizeof Vertex); // Starting from vertex 0; 3 vertices total -> 1 triangle
         glDisableVertexAttribArray(0);
     }
 
